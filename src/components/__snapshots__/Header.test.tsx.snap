@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> Should render the header component successfully 1`] = `
+<div
+  className="MuiBox-root css-1b8r6wj"
+>
+  <div
+    className="MuiGrid-root MuiGrid-container css-11lq3yg-MuiGrid-root"
+  >
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4 MuiGrid-grid-lg-4 css-1iu26gx-MuiGrid-root"
+    >
+      <img
+        alt="spill logo"
+        src="spill-logo.png"
+        style={
+          Object {
+            "minWidth": "200px",
+            "width": "50%",
+          }
+        }
+      />
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-8 MuiGrid-grid-lg-8 css-vok43g-MuiGrid-root"
+    />
+  </div>
+</div>
+`;
