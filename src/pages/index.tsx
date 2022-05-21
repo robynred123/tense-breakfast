@@ -1,5 +1,4 @@
 import { updateStatus } from '../actions/actons';
-import { Header } from '../components/Header';
 import { useAppDispatch, useAppSelector } from '../store';
 
 export const Index = () => {
@@ -8,7 +7,6 @@ export const Index = () => {
 
   return (
     <div className='App'>
-      <Header />
       <header className='App-header'>
         <p>{status}</p>
         <button onClick={() => dispatch(updateStatus('a call?'))}>Learn React</button>

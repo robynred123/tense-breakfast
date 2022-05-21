@@ -6,13 +6,16 @@ import store from './store';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
+import { Layout } from './pages/Layout';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <Provider store={store}>
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Index />} />
+        <Route element={<Layout />}>
+          <Route path='/' element={<Index />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   </Provider>
