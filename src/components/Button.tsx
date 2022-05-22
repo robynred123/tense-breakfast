@@ -1,7 +1,7 @@
 import { Button } from '@mui/material';
 import { GREY, LIGHT_BLUE, TEAL, WHITE } from '../constants/colours';
 
-type ButtonProps = {
+export type ButtonProps = {
   text: string;
   onClick: () => void;
   buttonColour: 'green' | 'grey' | 'gradient';

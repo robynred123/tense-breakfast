@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TherapistCard /> Should render the Therapist Card component successfully 1`] = `
+<div
+  style={
+    Object {
+      "border": "double",
+      "borderColor": "#374151",
+    }
+  }
+>
+  <div
+    className="MuiBox-root css-1caqi7t"
+  >
+    <div
+      className="MuiGrid-root MuiGrid-container css-11lq3yg-MuiGrid-root"
+    >
+      <div
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-2 css-1o7apob-MuiGrid-root"
+      >
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+          data-testid="AccountCircleIcon"
+          focusable="false"
+          style={
+            Object {
+              "color": "#35D0BA",
+              "height": "100%",
+              "width": "100%",
+            }
+          }
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
+          />
+        </svg>
+      </div>
+      <div
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-10 css-uvmdr-MuiGrid-root"
+      >
+        <div
+          style={
+            Object {
+              "borderColor": "black",
+              "borderWidth": "10px",
+            }
+          }
+        >
+          <h4
+            className="MuiTypography-root MuiTypography-h4 css-od8ppe-MuiTypography-root"
+          >
+            Albert
+             
+            Einstein
+          </h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
