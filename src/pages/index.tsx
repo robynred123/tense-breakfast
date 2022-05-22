@@ -7,7 +7,7 @@ import { useAppDispatch, useAppSelector } from '../store';
 import { FilterMenu } from '../components/FilterMenu';
 
 export const Index = () => {
-  const { therapists } = useAppSelector((state) => state.one);
+  const { therapists, filterOptions } = useAppSelector((state) => state.one);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -31,7 +31,7 @@ export const Index = () => {
           <div>{renderTherapists()}</div>
         </Grid>
         <Grid item xs={0} sm={0} md={4} lg={4} sx={{ paddingTop: '5%', paddingRight: '5%' }}>
-          <FilterMenu />
+          <FilterMenu {...filterOptions} />
         </Grid>
       </Grid>
     </Box>

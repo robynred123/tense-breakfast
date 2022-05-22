@@ -1,5 +1,5 @@
 import { Button } from '@mui/material';
-import { GREY, LIGHT_BLUE, TEAL, WHITE } from '../constants/colours';
+import { DARK_GREY, LIGHT_BLUE, TEAL, WHITE } from '../constants/colours';
 
 export type ButtonProps = {
   text: string;
@@ -15,12 +15,13 @@ const setStyle = (buttonColour: string, sharedStyling: {}) => {
       return {
         ...sharedStyling,
         backgroundColor: TEAL,
+        color: 'black',
       };
     case 'grey':
       return {
         ...sharedStyling,
         color: WHITE,
-        backgroundColor: GREY,
+        backgroundColor: DARK_GREY,
       };
     case 'gradient':
       return {
@@ -30,6 +31,7 @@ const setStyle = (buttonColour: string, sharedStyling: {}) => {
       };
     default:
       return {
+        color: 'black',
         backgroundColor: TEAL,
       };
   }
@@ -41,10 +43,11 @@ export const ButtonComponent = (props: ButtonProps) => {
   const sharedStyling = {
     width: width,
     borderRadius: '15px',
+    minWidth: '125px',
   };
 
   return (
-    <Button sx={setStyle(buttonColour, sharedStyling)} onClick={() => onClick} disabled={disabled}>
+    <Button sx={setStyle(buttonColour, sharedStyling)} onClick={onClick} disabled={disabled}>
       {text}
     </Button>
   );

@@ -1,11 +1,33 @@
 /* eslint-disable testing-library/await-async-query */
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { Provider } from 'react-redux';
+import configureStore from 'redux-mock-store';
 import { FilterMenu } from './FilterMenu';
+import { FilterOptions, ReducerState } from '../types';
+import { Store, AnyAction } from 'redux';
 
 describe('<FilterMenu />', () => {
-  it('Should render the button component successfully', () => {
-    const view = renderer.create(<FilterMenu />);
+  const filterOptions: FilterOptions = {
+    appointmentType: [],
+    appointmentMedium: [],
+    specialisms: [],
+  };
+  const initialState: ReducerState = { therapists: [], filterOptions };
+  const mockStore = configureStore();
+  let store: Store<any, AnyAction>;
+  store = mockStore(initialState);
+
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
+  it('Should render the FilterMenu component successfully', () => {
+    const view = renderer.create(
+      <Provider store={store}>
+        <FilterMenu {...filterOptions} />
+      </Provider>
+    );
     expect(view.toJSON()).toMatchSnapshot();
     expect(view.root.findByType('h5').props.children).toEqual('Filter Results');
     expect(view.root.findByType('h6').props.children).toEqual('Appointment Type');

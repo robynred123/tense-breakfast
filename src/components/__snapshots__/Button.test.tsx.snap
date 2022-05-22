@@ -2,7 +2,7 @@
 
 exports[`<ButtonComponent /> Should render the button component successfully 1`] = `
 <button
-  className="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root  css-kc2k11-MuiButtonBase-root-MuiButton-root"
+  className="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root  css-nn0jah-MuiButtonBase-root-MuiButton-root"
   disabled={false}
   onBlur={[Function]}
   onClick={[Function]}

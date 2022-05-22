@@ -1,8 +1,26 @@
 import { Box, Grid, Typography } from '@mui/material';
+import { useAppDispatch } from '../store';
 import { DARK_GREY, GREY } from '../constants/colours';
+import { AppointmentType, FilterOptions } from '../types';
 import { ButtonComponent } from './Button';
+import { updateFilterAppointmentType } from '../actions/actons';
+import { updateOptionsArray } from '../utils/filterOptions';
 
-export const FilterMenu = () => {
+export const FilterMenu = (filterOptions: FilterOptions) => {
+  const { appointmentType } = filterOptions;
+  console.log(appointmentType);
+  const dispatch = useAppDispatch();
+
+  const handleTypeChange = (value: AppointmentType) => {
+    return dispatch(updateFilterAppointmentType(updateOptionsArray(value, appointmentType)));
+  };
+
+  const determineSelectedType = (value: AppointmentType) => {
+    if (appointmentType.includes(value)) {
+      return 'green';
+    } else return 'grey';
+  };
+
   return (
     <Box
       sx={{
@@ -34,16 +52,16 @@ export const FilterMenu = () => {
           </Grid>
           <Grid container sx={{ width: '100%', justifyContent: 'space-evenly' }}>
             <ButtonComponent
-              onClick={() => console.log('clicked!')}
+              onClick={() => handleTypeChange('one-off')}
               text='One-Off'
-              buttonColour='gradient'
+              buttonColour={determineSelectedType('one-off')}
               disabled={false}
               width={'40%'}
             />
             <ButtonComponent
-              onClick={() => console.log('clicked!')}
+              onClick={() => handleTypeChange('consultation')}
               text='Consultation'
-              buttonColour='gradient'
+              buttonColour={determineSelectedType('consultation')}
               disabled={false}
               width={'40%'}
             />
