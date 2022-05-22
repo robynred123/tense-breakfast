@@ -1,8 +1,19 @@
+import axios from 'axios';
 import { slice } from '../reducers/reducer';
 import { AppDispatch } from '../store';
+import { TherapistInfo } from '../types';
 
-const { setStatus } = slice.actions;
+const { setTherapists } = slice.actions;
 
-export const updateStatus = (status: string) => (dispatch: AppDispatch) => {
-  dispatch(setStatus(status));
+type TherapistsResponse = {
+  data: TherapistInfo[];
+};
+
+export const getTherapists = () => async (dispatch: AppDispatch) => {
+  await axios
+    .get('data/counsellor-mock.json')
+    .then((response: TherapistsResponse) => {
+      dispatch(setTherapists(response.data as TherapistInfo[]));
+    })
+    .catch((error: any) => console.log(error));
 };

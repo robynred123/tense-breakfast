@@ -1,19 +1,20 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { TherapistInfo } from '../types';
 
 interface ReducerState {
-  status: string;
+  therapists: TherapistInfo[];
 }
 
 const initialState: ReducerState = {
-  status: 'no calls!',
+  therapists: [],
 };
 
 export const slice = createSlice({
-  name: 'status',
+  name: 'Therapists',
   initialState,
   reducers: {
-    setStatus: (state, action: PayloadAction<string>) => {
-      state.status = action.payload;
+    setTherapists: (state, action: PayloadAction<TherapistInfo[]>) => {
+      state.therapists = action.payload;
     },
   },
 });

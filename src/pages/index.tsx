@@ -1,16 +1,28 @@
-import { updateStatus } from '../actions/actons';
+import { useEffect } from 'react';
+import { getTherapists } from '../actions/actons';
+import { TherapistCard } from '../components/TherapistCard';
 import { useAppDispatch, useAppSelector } from '../store';
 
 export const Index = () => {
-  const { status } = useAppSelector((state) => state.one);
+  const { therapists } = useAppSelector((state) => state.one);
   const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    if (therapists.length === 0) {
+      dispatch(getTherapists());
+    }
+  }, [dispatch, therapists]);
+
+  const renderTherapists = () =>
+    therapists
+      ? therapists.map((therapist) => {
+          return <TherapistCard {...therapist} />;
+        })
+      : null;
 
   return (
     <div className='App'>
-      <header className='App-header'>
-        <p>{status}</p>
-        <button onClick={() => dispatch(updateStatus('a call?'))}>Learn React</button>
-      </header>
+      <div className='App-header'>{renderTherapists()}</div>
     </div>
   );
 };
