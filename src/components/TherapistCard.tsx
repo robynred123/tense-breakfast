@@ -2,7 +2,7 @@ import { Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import { AccountCircle } from '@mui/icons-material';
-import { DARK_GREY, GREY, TEAL } from '../constants/colours';
+import { DARK_GREY, TEAL } from '../constants/colours';
 import { TherapistInfo } from '../types';
 
 export const TherapistCard = (props: TherapistInfo) => {
@@ -13,7 +13,6 @@ export const TherapistCard = (props: TherapistInfo) => {
         sx={{
           flexGrow: 1,
           display: 'flex',
-          backgroundColor: GREY,
           alignContent: 'center',
           padding: '2%',
         }}

@@ -4,6 +4,7 @@ import Grid from '@mui/material/Grid';
 import { getTherapists } from '../actions/actons';
 import { TherapistCard } from '../components/TherapistCard';
 import { useAppDispatch, useAppSelector } from '../store';
+import { FilterMenu } from '../components/FilterMenu';
 
 export const Index = () => {
   const { therapists } = useAppSelector((state) => state.one);
@@ -29,7 +30,9 @@ export const Index = () => {
         <Grid item sm={12} xs={12} md={8} lg={8} sx={{ padding: '5%' }}>
           <div>{renderTherapists()}</div>
         </Grid>
-        <Grid item xs={0} sm={0} md={4} lg={4}></Grid>
+        <Grid item xs={0} sm={0} md={4} lg={4} sx={{ paddingTop: '5%', paddingRight: '5%' }}>
+          <FilterMenu />
+        </Grid>
       </Grid>
     </Box>
   );
