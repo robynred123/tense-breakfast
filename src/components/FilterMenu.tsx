@@ -11,17 +11,20 @@ interface MenuProps {
   therapistSpecialisms: Specialisms[];
 }
 
-type Type = 'date' | 'type' | 'method' | 'specialism';
+type Type = 'date' | 'type' | 'specialism';
 
 export const FilterMenu = (props: MenuProps) => {
   const { filterOptions, therapistSpecialisms } = props;
-  const { appointmentType, appointmentMedium, specialisms } = filterOptions;
+  const { appointmentType, dateRange, specialisms } = filterOptions;
   const dispatch = useAppDispatch();
 
   const handleFilterChanges = (value: AppointmentType | Specialisms, type: Type) => {
     const newOptions: FilterOptions = {
       appointmentType: appointmentType,
-      appointmentMedium: appointmentMedium,
+      dateRange: {
+        start: dateRange.start,
+        end: dateRange.end,
+      },
       specialisms: specialisms,
     };
     switch (type) {

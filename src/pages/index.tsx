@@ -10,7 +10,7 @@ import { extractSpecialisms } from '../utils/mapper';
 
 export const Index = () => {
   const { therapists, filteredTherapists, filterOptions } = useAppSelector((state) => state.one);
-  const { appointmentType, appointmentMedium, specialisms } = filterOptions;
+  const { appointmentType, dateRange, specialisms } = filterOptions;
   const [therapistSpecialisms, setTherapistSpecialisms] = useState<Specialisms[]>([]);
   const dispatch = useAppDispatch();
 
@@ -28,7 +28,7 @@ export const Index = () => {
 
   useEffect(() => {
     dispatch(filterTherapists(therapists, appointmentType));
-  }, [dispatch, therapists, appointmentType, appointmentMedium, specialisms]);
+  }, [dispatch, therapists, appointmentType, dateRange, specialisms]);
 
   const renderTherapists = () =>
     filteredTherapists

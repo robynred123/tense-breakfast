@@ -20,9 +20,9 @@ export const getTherapists = () => async (dispatch: AppDispatch) => {
 
 export const updateFilterOptions = (filterOptions: FilterOptions) => (dispatch: AppDispatch) => {
   const mappedFilterOptions: FilterOptions = {
-    appointmentType: filterOptions.appointmentType || [],
-    appointmentMedium: filterOptions.appointmentMedium || [],
-    specialisms: filterOptions.specialisms || [],
+    appointmentType: filterOptions.appointmentType,
+    dateRange: filterOptions.dateRange,
+    specialisms: filterOptions.specialisms,
   };
   return dispatch(setFilterOptions(mappedFilterOptions));
 };

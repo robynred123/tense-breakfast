@@ -10,7 +10,10 @@ import { Store, AnyAction } from 'redux';
 describe('<FilterMenu />', () => {
   const filterOptions: FilterOptions = {
     appointmentType: [],
-    appointmentMedium: [],
+    dateRange: {
+      start: null,
+      end: null,
+    },
     specialisms: [],
   };
   const therapistSpecialisms = ['ADHD'];

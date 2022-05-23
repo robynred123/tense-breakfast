@@ -19,6 +19,9 @@ export type Specialisms = string;
 
 export type FilterOptions = {
   appointmentType: AppointmentType[];
-  appointmentMedium: AppointmentMedium[];
+  dateRange: {
+    start: Date | null;
+    end: Date | null;
+  };
   specialisms: Specialisms[];
 };

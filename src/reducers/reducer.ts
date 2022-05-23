@@ -6,7 +6,10 @@ const initialState: ReducerState = {
   filteredTherapists: [],
   filterOptions: {
     appointmentType: [],
-    appointmentMedium: [],
+    dateRange: {
+      start: null,
+      end: null,
+    },
     specialisms: [],
   },
 };
@@ -20,10 +23,13 @@ export const slice = createSlice({
       state.filteredTherapists = action.payload;
     },
     setFilterOptions: (state, action: PayloadAction<FilterOptions>) => {
-      const { appointmentType, appointmentMedium, specialisms } = action.payload;
+      const { appointmentType, dateRange, specialisms } = action.payload;
       state.filterOptions = {
         appointmentType: appointmentType,
-        appointmentMedium: appointmentMedium,
+        dateRange: {
+          start: dateRange.start,
+          end: dateRange.end,
+        },
         specialisms: specialisms,
       };
     },
