@@ -5,7 +5,8 @@ import { getTherapists, filterTherapists } from '../actions/actons';
 import { TherapistCard } from '../components/TherapistCard';
 import { useAppDispatch, useAppSelector } from '../store';
 import { FilterMenu } from '../components/FilterMenu';
-import { TherapistInfo, Specialisms } from '../types';
+import { Specialisms } from '../types';
+import { extractSpecialisms } from '../utils/mapper';
 
 export const Index = () => {
   const { therapists, filteredTherapists, filterOptions } = useAppSelector((state) => state.one);
@@ -17,16 +18,11 @@ export const Index = () => {
     // on load screen, get therapists
     if (therapists.length === 0) {
       dispatch(getTherapists());
-    } else {
-      // after loading therapists, extra specialisms.
-      therapists.forEach((therapist: TherapistInfo) => {
-        therapist.specialisms.forEach((s) => {
-          if (!therapistSpecialisms.includes(s)) {
-            const newArray = [...therapistSpecialisms, s];
-            setTherapistSpecialisms(newArray);
-          }
-        });
-      });
+    }
+    if (therapistSpecialisms.length === 0) {
+      // after loading therapists, extract specialisms.
+      const newSpecialisms = extractSpecialisms(therapists, therapistSpecialisms);
+      setTherapistSpecialisms(newSpecialisms);
     }
   }, [dispatch, therapists, therapistSpecialisms]);
 
