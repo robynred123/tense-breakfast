@@ -1,13 +1,14 @@
 import { useEffect } from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import { getTherapists } from '../actions/actons';
+import { getTherapists, filterTherapists } from '../actions/actons';
 import { TherapistCard } from '../components/TherapistCard';
 import { useAppDispatch, useAppSelector } from '../store';
 import { FilterMenu } from '../components/FilterMenu';
 
 export const Index = () => {
-  const { therapists, filterOptions } = useAppSelector((state) => state.one);
+  const { therapists, filteredTherapists, filterOptions } = useAppSelector((state) => state.one);
+  const { appointmentType, appointmentMedium, specialisms } = filterOptions;
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -17,9 +18,13 @@ export const Index = () => {
     }
   }, [dispatch, therapists]);
 
+  useEffect(() => {
+    dispatch(filterTherapists(therapists, appointmentType));
+  }, [dispatch, therapists, appointmentType, appointmentMedium, specialisms]);
+
   const renderTherapists = () =>
-    therapists
-      ? therapists.map((therapist) => {
+    filteredTherapists
+      ? filteredTherapists.map((therapist) => {
           return <TherapistCard {...therapist} />;
         })
       : null;

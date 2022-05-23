@@ -10,7 +10,7 @@ describe('<TherapistCard />', () => {
       id: '063eb398-45f7-4a9c-a5d3-e95d14c05c44',
       firstName: 'Albert',
       lastName: 'Einstein',
-      appointment_types: ['one-off'],
+      appointment_types: ['one_off'],
       appointment_mediums: ['phone'],
       specialisms: ['alcoholism'],
     };

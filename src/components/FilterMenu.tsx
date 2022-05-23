@@ -52,9 +52,9 @@ export const FilterMenu = (filterOptions: FilterOptions) => {
           </Grid>
           <Grid container sx={{ width: '100%', justifyContent: 'space-evenly' }}>
             <ButtonComponent
-              onClick={() => handleTypeChange('one-off')}
-              text='One-Off'
-              buttonColour={determineSelectedType('one-off')}
+              onClick={() => handleTypeChange('one_off')}
+              text='One_Off'
+              buttonColour={determineSelectedType('one_off')}
               disabled={false}
               width={'40%'}
             />

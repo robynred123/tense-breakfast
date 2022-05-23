@@ -3,6 +3,7 @@ import { TherapistInfo, FilterOptions, AppointmentType, ReducerState } from '../
 
 const initialState: ReducerState = {
   therapists: [],
+  filteredTherapists: [],
   filterOptions: {
     appointmentType: [],
     appointmentMedium: [],
@@ -16,6 +17,7 @@ export const slice = createSlice({
   reducers: {
     setTherapists: (state, action: PayloadAction<TherapistInfo[]>) => {
       state.therapists = action.payload;
+      state.filteredTherapists = action.payload;
     },
     setFilterOptions: (state, action: PayloadAction<FilterOptions>) => {
       const { appointmentType, appointmentMedium, specialisms } = action.payload;
@@ -27,6 +29,9 @@ export const slice = createSlice({
     },
     setFilterAppointmentType: (state, action: PayloadAction<AppointmentType[]>) => {
       state.filterOptions.appointmentType = action.payload;
+    },
+    setFilteredTherapists: (state, action: PayloadAction<TherapistInfo[]>) => {
+      state.filteredTherapists = action.payload;
     },
   },
 });

@@ -13,7 +13,7 @@ describe('<FilterMenu />', () => {
     appointmentMedium: [],
     specialisms: [],
   };
-  const initialState: ReducerState = { therapists: [], filterOptions };
+  const initialState: ReducerState = { therapists: [], filteredTherapists: [], filterOptions };
   const mockStore = configureStore();
   let store: Store<any, AnyAction>;
   store = mockStore(initialState);
@@ -32,7 +32,7 @@ describe('<FilterMenu />', () => {
     expect(view.root.findByType('h5').props.children).toEqual('Filter Results');
     expect(view.root.findByType('h6').props.children).toEqual('Appointment Type');
     const buttons = view.root.findAllByType('button');
-    expect(buttons[0].props.children).toEqual([[undefined, 'One-Off', undefined], null]);
+    expect(buttons[0].props.children).toEqual([[undefined, 'One_Off', undefined], null]);
     expect(buttons[1].props.children).toEqual([[undefined, 'Consultation', undefined], null]);
   });
 });
