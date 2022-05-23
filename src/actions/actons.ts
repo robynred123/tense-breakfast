@@ -3,8 +3,7 @@ import { slice } from '../reducers/reducer';
 import { AppDispatch } from '../store';
 import { AppointmentType, FilterOptions, TherapistInfo } from '../types';
 
-const { setTherapists, setFilterOptions, setFilterAppointmentType, setFilteredTherapists } =
-  slice.actions;
+const { setTherapists, setFilterOptions, setFilteredTherapists } = slice.actions;
 
 type TherapistsResponse = {
   data: TherapistInfo[];
@@ -27,11 +26,6 @@ export const updateFilterOptions = (filterOptions: FilterOptions) => (dispatch: 
   };
   return dispatch(setFilterOptions(mappedFilterOptions));
 };
-
-export const updateFilterAppointmentType =
-  (appointmentTypes: AppointmentType[]) => (dispatch: AppDispatch) => {
-    return dispatch(setFilterAppointmentType(appointmentTypes));
-  };
 
 export const filterTherapists =
   (therapists: TherapistInfo[], appointmentTypes: AppointmentType[]) => (dispatch: AppDispatch) => {

@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { TherapistInfo, FilterOptions, AppointmentType, ReducerState } from '../types';
+import { TherapistInfo, FilterOptions, ReducerState } from '../types';
 
 const initialState: ReducerState = {
   therapists: [],
@@ -26,9 +26,6 @@ export const slice = createSlice({
         appointmentMedium: appointmentMedium,
         specialisms: specialisms,
       };
-    },
-    setFilterAppointmentType: (state, action: PayloadAction<AppointmentType[]>) => {
-      state.filterOptions.appointmentType = action.payload;
     },
     setFilteredTherapists: (state, action: PayloadAction<TherapistInfo[]>) => {
       state.filteredTherapists = action.payload;

@@ -3,25 +3,45 @@ import { useAppDispatch } from '../store';
 import { DARK_GREY, GREY } from '../constants/colours';
 import { AppointmentType, FilterOptions, Specialisms } from '../types';
 import { ButtonComponent } from './Button';
-import { updateFilterAppointmentType } from '../actions/actons';
-import { updateOptionsArray } from '../utils/filterOptions';
+import { updateFilterOptions } from '../actions/actons';
+import { updateSpecialismsArray, updateTypesArray } from '../utils/filterOptions';
 
 interface MenuProps {
   filterOptions: FilterOptions;
   therapistSpecialisms: Specialisms[];
 }
 
+type Type = 'date' | 'type' | 'method' | 'specialism';
+
 export const FilterMenu = (props: MenuProps) => {
   const { filterOptions, therapistSpecialisms } = props;
-  const { appointmentType } = filterOptions;
+  const { appointmentType, appointmentMedium, specialisms } = filterOptions;
   const dispatch = useAppDispatch();
 
-  const handleTypeChange = (value: AppointmentType) => {
-    return dispatch(updateFilterAppointmentType(updateOptionsArray(value, appointmentType)));
-  };
-
-  const handleSpecialismChange = (value: Specialisms) => {
-    console.log(value);
+  const handleFilterChanges = (value: AppointmentType | Specialisms, type: Type) => {
+    const newOptions: FilterOptions = {
+      appointmentType: appointmentType,
+      appointmentMedium: appointmentMedium,
+      specialisms: specialisms,
+    };
+    switch (type) {
+      case 'type':
+        return dispatch(
+          updateFilterOptions({
+            ...newOptions,
+            appointmentType: updateTypesArray(value as AppointmentType, appointmentType),
+          })
+        );
+      case 'specialism':
+        return dispatch(
+          updateFilterOptions({
+            ...newOptions,
+            specialisms: updateSpecialismsArray(value, specialisms),
+          })
+        );
+      default:
+        break;
+    }
   };
 
   const determineSelectedType = (value: AppointmentType) => {
@@ -61,14 +81,14 @@ export const FilterMenu = (props: MenuProps) => {
           </Grid>
           <Grid container sx={{ width: '100%', justifyContent: 'space-evenly' }}>
             <ButtonComponent
-              onClick={() => handleTypeChange('one_off')}
+              onClick={() => handleFilterChanges('one_off', 'type')}
               text='One_Off'
               buttonColour={determineSelectedType('one_off')}
               disabled={false}
               width={'40%'}
             />
             <ButtonComponent
-              onClick={() => handleTypeChange('consultation')}
+              onClick={() => handleFilterChanges('consultation', 'type')}
               text='Consultation'
               buttonColour={determineSelectedType('consultation')}
               disabled={false}
@@ -91,7 +111,7 @@ export const FilterMenu = (props: MenuProps) => {
                     control={
                       <Checkbox
                         defaultChecked={false}
-                        onChange={() => handleSpecialismChange(specialism)}
+                        onChange={() => handleFilterChanges(specialism, 'specialism')}
                       />
                     }
                     label={specialism}
