@@ -27,7 +27,7 @@ export const Index = () => {
   }, [dispatch, therapists, therapistSpecialisms]);
 
   useEffect(() => {
-    dispatch(filterTherapists(therapists, appointmentType));
+    dispatch(filterTherapists(therapists, appointmentType, specialisms));
   }, [dispatch, therapists, appointmentType, dateRange, specialisms]);
 
   const renderTherapists = () =>
