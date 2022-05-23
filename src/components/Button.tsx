@@ -44,6 +44,7 @@ export const ButtonComponent = (props: ButtonProps) => {
     width: width,
     borderRadius: '15px',
     minWidth: '125px',
+    marginTop: '10px',
   };
 
   return (

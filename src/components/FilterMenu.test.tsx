@@ -13,6 +13,7 @@ describe('<FilterMenu />', () => {
     appointmentMedium: [],
     specialisms: [],
   };
+  const therapistSpecialisms = ['ADHD'];
   const initialState: ReducerState = { therapists: [], filteredTherapists: [], filterOptions };
   const mockStore = configureStore();
   let store: Store<any, AnyAction>;
@@ -25,7 +26,7 @@ describe('<FilterMenu />', () => {
   it('Should render the FilterMenu component successfully', () => {
     const view = renderer.create(
       <Provider store={store}>
-        <FilterMenu {...filterOptions} />
+        <FilterMenu filterOptions={filterOptions} therapistSpecialisms={therapistSpecialisms} />
       </Provider>
     );
     expect(view.toJSON()).toMatchSnapshot();

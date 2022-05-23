@@ -8,7 +8,7 @@ import { TherapistInfo } from '../types';
 export const TherapistCard = (props: TherapistInfo) => {
   const therapist = props;
   return (
-    <div key={therapist.firstName} style={{ border: 'double', borderColor: DARK_GREY }}>
+    <div style={{ border: 'double', borderColor: DARK_GREY }}>
       <Box
         sx={{
           flexGrow: 1,
