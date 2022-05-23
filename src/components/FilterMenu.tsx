@@ -12,13 +12,16 @@ interface MenuProps {
 }
 
 export const FilterMenu = (props: MenuProps) => {
-  const { appointmentType } = props.filterOptions;
+  const { filterOptions, therapistSpecialisms } = props;
+  const { appointmentType } = filterOptions;
   const dispatch = useAppDispatch();
-
-  console.log(props.therapistSpecialisms);
 
   const handleTypeChange = (value: AppointmentType) => {
     return dispatch(updateFilterAppointmentType(updateOptionsArray(value, appointmentType)));
+  };
+
+  const handleSpecialismChange = (value: Specialisms) => {
+    console.log(value);
   };
 
   const determineSelectedType = (value: AppointmentType) => {
@@ -73,7 +76,6 @@ export const FilterMenu = (props: MenuProps) => {
             />
           </Grid>
         </Grid>
-
         <Grid container>
           <Grid item>
             <Typography variant='h5' fontFamily={'lato, sans-serif'}>
@@ -82,10 +84,19 @@ export const FilterMenu = (props: MenuProps) => {
           </Grid>
           <Grid container sx={{ width: '100%', justifyContent: 'flex-start' }}>
             <FormGroup>
-              <FormControlLabel
-                control={<Checkbox defaultChecked={false} onChange={() => console.log('wow')} />}
-                label='hi'
-              />
+              {therapistSpecialisms &&
+                therapistSpecialisms.map((specialism) => (
+                  <FormControlLabel
+                    key={specialism}
+                    control={
+                      <Checkbox
+                        defaultChecked={false}
+                        onChange={() => handleSpecialismChange(specialism)}
+                      />
+                    }
+                    label={specialism}
+                  />
+                ))}
             </FormGroup>
           </Grid>
         </Grid>
