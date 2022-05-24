@@ -10,33 +10,33 @@ exports[`<FilterMenu /> Should render the FilterMenu component successfully 1`] 
     <div
       className="MuiGrid-root MuiGrid-item css-1llorz5-MuiGrid-root"
     >
-      <h5
-        className="MuiTypography-root MuiTypography-h5 css-1mzsfvt-MuiTypography-root"
+      <h4
+        className="MuiTypography-root MuiTypography-h4 css-od8ppe-MuiTypography-root"
       >
         Filter Results
-      </h5>
+      </h4>
     </div>
   </div>
   <div
     className="MuiGrid-root MuiGrid-container css-14ldd2u-MuiGrid-root"
   >
     <div
-      className="MuiGrid-root MuiGrid-container css-11lq3yg-MuiGrid-root"
+      className="MuiGrid-root MuiGrid-container css-6hqven-MuiGrid-root"
     >
       <div
         className="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
       >
-        <h6
-          className="MuiTypography-root MuiTypography-h6 css-k0cgwl-MuiTypography-root"
+        <h5
+          className="MuiTypography-root MuiTypography-h5 css-1mzsfvt-MuiTypography-root"
         >
           Appointment Type
-        </h6>
+        </h5>
       </div>
       <div
         className="MuiGrid-root MuiGrid-container css-p54wsc-MuiGrid-root"
       >
         <button
-          className="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root  css-rw4q7k-MuiButtonBase-root-MuiButton-root"
+          className="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root  css-1d5f0aw-MuiButtonBase-root-MuiButton-root"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
@@ -54,10 +54,10 @@ exports[`<FilterMenu /> Should render the FilterMenu component successfully 1`] 
           tabIndex={0}
           type="button"
         >
-          One-Off
+          One_Off
         </button>
         <button
-          className="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root  css-rw4q7k-MuiButtonBase-root-MuiButton-root"
+          className="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root  css-1d5f0aw-MuiButtonBase-root-MuiButton-root"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
@@ -79,87 +79,69 @@ exports[`<FilterMenu /> Should render the FilterMenu component successfully 1`] 
         </button>
       </div>
     </div>
-  </div>
-</div>
-`;
-
-exports[`<FilterMenu /> Should render the button component successfully 1`] = `
-<div
-  className="MuiBox-root css-nr4a5l"
->
-  <div
-    className="MuiGrid-root MuiGrid-container css-1t09gft-MuiGrid-root"
-  >
-    <div
-      className="MuiGrid-root MuiGrid-item css-1llorz5-MuiGrid-root"
-    >
-      <h5
-        className="MuiTypography-root MuiTypography-h5 css-1mzsfvt-MuiTypography-root"
-      >
-        Filter Results
-      </h5>
-    </div>
-  </div>
-  <div
-    className="MuiGrid-root MuiGrid-container css-14ldd2u-MuiGrid-root"
-  >
     <div
       className="MuiGrid-root MuiGrid-container css-11lq3yg-MuiGrid-root"
     >
       <div
         className="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
       >
-        <h6
-          className="MuiTypography-root MuiTypography-h6 css-k0cgwl-MuiTypography-root"
+        <h5
+          className="MuiTypography-root MuiTypography-h5 css-1mzsfvt-MuiTypography-root"
         >
-          Appointment Type
-        </h6>
+          Specialism
+        </h5>
       </div>
       <div
-        className="MuiGrid-root MuiGrid-container css-p54wsc-MuiGrid-root"
+        className="MuiGrid-root MuiGrid-container css-119qa06-MuiGrid-root"
       >
-        <button
-          className="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root  css-rw4q7k-MuiButtonBase-root-MuiButton-root"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onContextMenu={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          tabIndex={0}
-          type="button"
+        <div
+          className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
         >
-          One-Off
-        </button>
-        <button
-          className="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root  css-rw4q7k-MuiButtonBase-root-MuiButton-root"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onContextMenu={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          tabIndex={0}
-          type="button"
-        >
-          Consultation
-        </button>
+          <label
+            className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-j204z7-MuiFormControlLabel-root"
+          >
+            <span
+              className="MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
+              onBlur={[Function]}
+              onContextMenu={[Function]}
+              onDragLeave={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={null}
+            >
+              <input
+                className="PrivateSwitchBase-input css-1m9pwf3"
+                data-indeterminate={false}
+                defaultChecked={false}
+                onChange={[Function]}
+                type="checkbox"
+              />
+              <svg
+                aria-hidden={true}
+                className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                data-testid="CheckBoxOutlineBlankIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                />
+              </svg>
+            </span>
+            <span
+              className="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-ahj2mt-MuiTypography-root"
+            >
+              ADHD
+            </span>
+          </label>
+        </div>
       </div>
     </div>
   </div>

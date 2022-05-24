@@ -7,6 +7,7 @@ import { useAppDispatch, useAppSelector } from '../store';
 import { FilterMenu } from '../components/FilterMenu';
 import { Specialisms } from '../types';
 import { extractSpecialisms } from '../utils/mapper';
+import { Typography } from '@mui/material';
 
 export const Index = () => {
   const { therapists, filteredTherapists, filterOptions } = useAppSelector((state) => state.one);
@@ -31,11 +32,15 @@ export const Index = () => {
   }, [dispatch, therapists, appointmentType, dateRange, specialisms]);
 
   const renderTherapists = () =>
-    filteredTherapists
-      ? filteredTherapists.map((therapist) => {
-          return <TherapistCard key={therapist.id} {...therapist} />;
-        })
-      : null;
+    filteredTherapists ? (
+      filteredTherapists.map((therapist) => {
+        return <TherapistCard key={therapist.id} {...therapist} />;
+      })
+    ) : (
+      <Typography variant='h2' fontFamily={'lato, sans-serif'}>
+        No Therapists Found Matching Selected Filters
+      </Typography>
+    );
 
   return (
     <Box sx={{ flexGrow: 1, width: 1, flexDirection: 'row' }}>
