@@ -21,6 +21,121 @@ exports[`<FilterMenu /> Should render the FilterMenu component successfully 1`] 
     className="MuiGrid-root MuiGrid-container css-14ldd2u-MuiGrid-root"
   >
     <div
+      className="MuiGrid-root MuiGrid-container css-11lq3yg-MuiGrid-root"
+    >
+      <div
+        className="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
+      >
+        <h5
+          className="MuiTypography-root MuiTypography-h5 css-1mzsfvt-MuiTypography-root"
+        >
+          Dates
+        </h5>
+      </div>
+      <div
+        className="MuiGrid-root MuiGrid-container css-1tedp6a-MuiGrid-root"
+      >
+        <div
+          className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
+        >
+          <div
+            className="MuiFormControl-root MuiTextField-root css-49mig2-MuiFormControl-root-MuiTextField-root"
+          >
+            <label
+              className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
+              data-shrink={false}
+              htmlFor=":r0:"
+              id=":r0:-label"
+            >
+              Start Date
+            </label>
+            <div
+              className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
+              onClick={[Function]}
+            >
+              <input
+                aria-invalid={false}
+                aria-label="Choose date"
+                aria-readonly={true}
+                autoFocus={false}
+                className="MuiOutlinedInput-input MuiInputBase-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+                id=":r0:"
+                onAnimationStart={[Function]}
+                onBlur={[Function]}
+                onChange={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                readOnly={true}
+                required={false}
+                type="text"
+                value=""
+              />
+              <fieldset
+                aria-hidden={true}
+                className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+              >
+                <legend
+                  className="css-1ftyaf0"
+                >
+                  <span>
+                    Start Date
+                  </span>
+                </legend>
+              </fieldset>
+            </div>
+          </div>
+          <div
+            className="MuiFormControl-root MuiTextField-root css-49mig2-MuiFormControl-root-MuiTextField-root"
+          >
+            <label
+              className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
+              data-shrink={false}
+              htmlFor=":r2:"
+              id=":r2:-label"
+            >
+              End Date
+            </label>
+            <div
+              className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
+              onClick={[Function]}
+            >
+              <input
+                aria-invalid={false}
+                aria-label="Choose date"
+                aria-readonly={true}
+                autoFocus={false}
+                className="MuiOutlinedInput-input MuiInputBase-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+                id=":r2:"
+                onAnimationStart={[Function]}
+                onBlur={[Function]}
+                onChange={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                readOnly={true}
+                required={false}
+                type="text"
+                value=""
+              />
+              <fieldset
+                aria-hidden={true}
+                className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+              >
+                <legend
+                  className="css-1ftyaf0"
+                >
+                  <span>
+                    End Date
+                  </span>
+                </legend>
+              </fieldset>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
       className="MuiGrid-root MuiGrid-container css-6hqven-MuiGrid-root"
     >
       <div
@@ -54,7 +169,7 @@ exports[`<FilterMenu /> Should render the FilterMenu component successfully 1`] 
           tabIndex={0}
           type="button"
         >
-          One_Off
+          One Off
         </button>
         <button
           className="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root  css-1d5f0aw-MuiButtonBase-root-MuiButton-root"

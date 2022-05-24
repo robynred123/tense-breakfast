@@ -13,15 +13,17 @@ export interface TherapistInfo {
   specialisms: Specialisms[];
 }
 
+export interface DateRange {
+  start: string | null;
+  end: string | null;
+}
+
 export type AppointmentType = 'one_off' | 'consultation';
 export type AppointmentMedium = 'phone' | 'video';
 export type Specialisms = string;
 
 export type FilterOptions = {
   appointmentType: AppointmentType[];
-  dateRange: {
-    start: Date | null;
-    end: Date | null;
-  };
+  dateRange: DateRange;
   specialisms: Specialisms[];
 };

@@ -34,9 +34,10 @@ describe('<FilterMenu />', () => {
     );
     expect(view.toJSON()).toMatchSnapshot();
     expect(view.root.findByType('h4').props.children).toEqual('Filter Results');
-    expect(view.root.findAllByType('h5')[0].props.children).toEqual('Appointment Type');
+    expect(view.root.findAllByType('h5')[0].props.children).toEqual('Dates');
+    expect(view.root.findAllByType('h5')[1].props.children).toEqual('Appointment Type');
     const buttons = view.root.findAllByType('button');
-    expect(buttons[0].props.children).toEqual([[undefined, 'One_Off', undefined], null]);
+    expect(buttons[0].props.children).toEqual([[undefined, 'One Off', undefined], null]);
     expect(buttons[1].props.children).toEqual([[undefined, 'Consultation', undefined], null]);
   });
 });
