@@ -11,11 +11,21 @@ export interface TherapistInfo {
   appointment_types: AppointmentType[];
   appointment_mediums: AppointmentMedium[];
   specialisms: Specialisms[];
+  availableAppointments?: Date[];
 }
 
 export interface DateRange {
   start: string | null;
   end: string | null;
+}
+
+export interface AvailabilityData {
+  id: string;
+  datetime: string;
+}
+
+export interface Availabilities {
+  [therapistId: string]: AvailabilityData[];
 }
 
 export type AppointmentType = 'one_off' | 'consultation';

@@ -15,7 +15,7 @@ import { useAppDispatch } from '../store';
 import { DARK_GREY, GREY } from '../constants/colours';
 import { AppointmentType, FilterOptions, Specialisms, DateRange } from '../types';
 import { ButtonComponent } from './Button';
-import { updateFilterOptions } from '../actions/actons';
+import { updateFilterOptions } from '../actions/actions';
 import { updateSpecialismsArray, updateTypesArray } from '../utils/filterOptions';
 
 interface MenuProps {
@@ -32,6 +32,7 @@ export const FilterMenu = (props: MenuProps) => {
   const [endDate, setEndDate] = useState<Date | null>(null);
   const dispatch = useAppDispatch();
 
+  // TODO: Move this to a util file
   const handleFilterChanges = (value: AppointmentType | Specialisms | DateRange, type: Type) => {
     const newOptions: FilterOptions = {
       appointmentType: appointmentType,

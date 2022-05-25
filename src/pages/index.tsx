@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import { getTherapists, filterTherapists } from '../actions/actons';
+import { getTherapists, filterTherapists } from '../actions/actions';
 import { TherapistCard } from '../components/TherapistCard';
 import { useAppDispatch, useAppSelector } from '../store';
 import { FilterMenu } from '../components/FilterMenu';
@@ -28,7 +28,7 @@ export const Index = () => {
   }, [dispatch, therapists, therapistSpecialisms]);
 
   useEffect(() => {
-    dispatch(filterTherapists(therapists, appointmentType, specialisms));
+    dispatch(filterTherapists(therapists, appointmentType, dateRange, specialisms));
   }, [dispatch, therapists, appointmentType, dateRange, specialisms]);
 
   const renderTherapists = () =>
