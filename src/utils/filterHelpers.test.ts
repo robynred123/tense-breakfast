@@ -1,4 +1,3 @@
-import moment from 'moment';
 import { AppointmentType, Availabilities, Specialisms, TherapistInfo } from '../types';
 import { filterHelper, filterByDate } from './filterHelpers';
 

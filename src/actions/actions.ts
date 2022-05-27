@@ -37,6 +37,18 @@ export const updateFilterOptions = (filterOptions: FilterOptions) => (dispatch: 
   return dispatch(setFilterOptions(mappedFilterOptions));
 };
 
+export const getAvailabilities = async () => {
+  return await axios
+    .get('data/availability-mock.json')
+    .then(async (response: any) => {
+      return response.data;
+    })
+    .catch((error: any) => {
+      console.log(error);
+      return {};
+    });
+};
+
 export const filterTherapists =
   (
     therapists: TherapistInfo[],
@@ -53,14 +65,9 @@ export const filterTherapists =
     } else {
       let filteredTherapists;
       if (start && end) {
-        await axios
-          .get('data/availability-mock.json')
-          .then(async (response: any) => {
-            const availabilities = await filterByDate(therapists, response.data, start, end);
-
-            filteredTherapists = filterHelper(availabilities, appointmentTypes, specialisms);
-          })
-          .catch((error: any) => console.log(error));
+        const data: Availabilities = await getAvailabilities();
+        const availabilities = await filterByDate(therapists, data, start, end);
+        filteredTherapists = filterHelper(availabilities, appointmentTypes, specialisms);
       } else {
         filteredTherapists = filterHelper(therapists, appointmentTypes, specialisms);
       }
