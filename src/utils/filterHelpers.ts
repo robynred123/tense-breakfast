@@ -13,14 +13,12 @@ export const filterHelper = (
     const returnTherapistByType = appointmentTypes.every((type) =>
       therapistAppTypes.includes(type)
     );
-    console.log(returnTherapistByType);
 
     //specialisms
     const therapistSpecialisms = therapist.specialisms;
     const returnTherapistBySpecial = specialisms.every((type) =>
       therapistSpecialisms.includes(type)
     );
-    console.log(returnTherapistBySpecial);
 
     if (returnTherapistByType && returnTherapistBySpecial) {
       return therapist;
@@ -45,7 +43,7 @@ export const filterByDate = async (
         const dateTime = entry.datetime;
         return moment(dateTime).isBetween(start, end);
       }) &&
-      availableTherapists.includes(therapist) === false
+      !availableTherapists.includes(therapist)
     ) {
       availableTherapists.push(therapist);
     }

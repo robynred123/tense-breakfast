@@ -11,7 +11,7 @@ import {
   Specialisms,
   TherapistInfo,
 } from '../types';
-import { filterHelper } from '../utils/filterHelpers';
+import { filterByDate, filterHelper } from '../utils/filterHelpers';
 
 const { setTherapists, setFilterOptions, setFilteredTherapists } = slice.actions;
 
@@ -35,29 +35,6 @@ export const updateFilterOptions = (filterOptions: FilterOptions) => (dispatch: 
     specialisms: filterOptions.specialisms,
   };
   return dispatch(setFilterOptions(mappedFilterOptions));
-};
-
-const filterByDate = async (
-  therapists: TherapistInfo[],
-  response: Availabilities,
-  start: string,
-  end: string
-) => {
-  const availableTherapists: TherapistInfo[] = [];
-  therapists.forEach((therapist) => {
-    const therapistId = therapist.id;
-    const dateTimeArray = response[therapistId];
-    if (
-      dateTimeArray.some((entry) => {
-        const dateTime = entry.datetime;
-        return moment(dateTime).isBetween(start, end);
-      }) &&
-      availableTherapists.includes(therapist) === false
-    ) {
-      availableTherapists.push(therapist);
-    }
-  });
-  return availableTherapists;
 };
 
 export const filterTherapists =
