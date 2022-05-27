@@ -1,5 +1,6 @@
 /* eslint-disable array-callback-return */
-import { AppointmentType, Specialisms, TherapistInfo } from '../types';
+import moment from 'moment';
+import { AppointmentType, Availabilities, Specialisms, TherapistInfo } from '../types';
 
 export const filterHelper = (
   therapists: TherapistInfo[],
@@ -7,28 +8,47 @@ export const filterHelper = (
   specialisms: Specialisms[]
 ) => {
   const filterByType: TherapistInfo[] = therapists.filter((therapist) => {
+    //types
     const therapistAppTypes = therapist.appointment_types;
     const returnTherapistByType = appointmentTypes.every((type) =>
       therapistAppTypes.includes(type)
     );
-    if (returnTherapistByType) {
-      return therapist;
-    }
-  });
+    console.log(returnTherapistByType);
 
-  const filteredBySpecialisms = filterSpecialisms(filterByType, specialisms);
-  return filteredBySpecialisms;
-};
-
-export const filterSpecialisms = (therapists: TherapistInfo[], specialisms: Specialisms[]) => {
-  const filterBySpecialisms: TherapistInfo[] = therapists.filter((therapist) => {
+    //specialisms
     const therapistSpecialisms = therapist.specialisms;
     const returnTherapistBySpecial = specialisms.every((type) =>
       therapistSpecialisms.includes(type)
     );
-    if (returnTherapistBySpecial) {
+    console.log(returnTherapistBySpecial);
+
+    if (returnTherapistByType && returnTherapistBySpecial) {
       return therapist;
     }
   });
-  return filterBySpecialisms;
+
+  return filterByType;
+};
+
+export const filterByDate = async (
+  therapists: TherapistInfo[],
+  response: Availabilities,
+  start: string,
+  end: string
+) => {
+  const availableTherapists: TherapistInfo[] = [];
+  therapists.forEach((therapist) => {
+    const therapistId = therapist.id;
+    const dateTimeArray = response[therapistId];
+    if (
+      dateTimeArray.some((entry) => {
+        const dateTime = entry.datetime;
+        return moment(dateTime).isBetween(start, end);
+      }) &&
+      availableTherapists.includes(therapist) === false
+    ) {
+      availableTherapists.push(therapist);
+    }
+  });
+  return availableTherapists;
 };

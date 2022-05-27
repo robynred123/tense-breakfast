@@ -1,5 +1,5 @@
 import { AppointmentType, Specialisms, TherapistInfo } from '../types';
-import { filterHelper, filterSpecialisms } from './filterHelpers';
+import { filterHelper } from './filterHelpers';
 
 const therapistOne: TherapistInfo = {
   id: '063eb398-45f7-4a9c-a5d3-e95d14c05c44',
@@ -47,46 +47,39 @@ describe('filterHelper', () => {
     expect(filteredTherapists).toEqual([therapistOne, therapistTwo]);
   });
 
-  it('Should not throw an error with no therapists', () => {
-    const therapists: TherapistInfo[] = [];
-    const therapistSpecialisms: Specialisms[] = [];
-    const appointmentTypes: AppointmentType[] = ['one_off'];
-
-    const filteredTherapists = filterHelper(therapists, appointmentTypes, therapistSpecialisms);
-    expect(filteredTherapists).toEqual([]);
-  });
-});
-
-describe('filterSpecialisms', () => {
   it('Should return expected therapist with matching specialism', () => {
     const therapists: TherapistInfo[] = [therapistOne, therapistTwo];
+    const appointmentTypes: AppointmentType[] = [];
     const therapistSpecialisms: Specialisms[] = ['Gambling Addiction'];
 
-    const filteredTherapists = filterSpecialisms(therapists, therapistSpecialisms);
+    const filteredTherapists = filterHelper(therapists, appointmentTypes, therapistSpecialisms);
     expect(filteredTherapists).toEqual([therapistOne]);
   });
 
   it('Should return expected therapists with no specialism', () => {
     const therapists: TherapistInfo[] = [therapistOne, therapistTwo];
+    const appointmentTypes: AppointmentType[] = [];
     const therapistSpecialisms: Specialisms[] = [];
 
-    const filteredTherapists = filterSpecialisms(therapists, therapistSpecialisms);
+    const filteredTherapists = filterHelper(therapists, appointmentTypes, therapistSpecialisms);
     expect(filteredTherapists).toEqual(therapists);
   });
 
   it('Should return no therapists with no matching specialism', () => {
     const therapists: TherapistInfo[] = [therapistOne, therapistTwo];
+    const appointmentTypes: AppointmentType[] = [];
     const therapistSpecialisms: Specialisms[] = ['Hypnotherapy'];
 
-    const filteredTherapists = filterSpecialisms(therapists, therapistSpecialisms);
+    const filteredTherapists = filterHelper(therapists, appointmentTypes, therapistSpecialisms);
     expect(filteredTherapists).toEqual([]);
   });
 
   it('Should not throw an error with no therapists', () => {
     const therapists: TherapistInfo[] = [];
+    const appointmentTypes: AppointmentType[] = [];
     const therapistSpecialisms: Specialisms[] = [];
 
-    const filteredTherapists = filterSpecialisms(therapists, therapistSpecialisms);
+    const filteredTherapists = filterHelper(therapists, appointmentTypes, therapistSpecialisms);
     expect(filteredTherapists).toEqual([]);
   });
 });
