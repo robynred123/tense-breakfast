@@ -32,12 +32,12 @@ export const Index = () => {
   }, [dispatch, therapists, appointmentType, dateRange, specialisms]);
 
   const renderTherapists = () =>
-    filteredTherapists ? (
+    filteredTherapists.length > 0 ? (
       filteredTherapists.map((therapist) => {
         return <TherapistCard key={therapist.id} {...therapist} />;
       })
     ) : (
-      <Typography variant='h2' fontFamily={'lato, sans-serif'}>
+      <Typography variant='h3' sx={{ textAlign: 'center' }} fontFamily={'lato, sans-serif'}>
         No Therapists Found Matching Selected Filters
       </Typography>
     );

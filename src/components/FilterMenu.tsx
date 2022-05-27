@@ -17,7 +17,6 @@ import { AppointmentType, FilterOptions, Specialisms, DateRange } from '../types
 import { ButtonComponent } from './Button';
 import { updateFilterOptions } from '../actions/actions';
 import { updateSpecialismsArray, updateTypesArray } from '../utils/filterOptions';
-import moment from 'moment';
 
 interface MenuProps {
   filterOptions: FilterOptions;

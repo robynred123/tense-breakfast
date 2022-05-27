@@ -44,16 +44,9 @@ const filterByDate = async (
   end: string
 ) => {
   const availableTherapists: TherapistInfo[] = [];
-
   therapists.forEach((therapist) => {
     const therapistId = therapist.id;
     const dateTimeArray = response[therapistId];
-    console.log(
-      dateTimeArray.some((entry) => {
-        const dateTime = entry.datetime; //Date.parse(entry.datetime);
-        return moment(dateTime).isBetween(start, end);
-      })
-    );
     if (
       dateTimeArray.some((entry) => {
         const dateTime = entry.datetime;
