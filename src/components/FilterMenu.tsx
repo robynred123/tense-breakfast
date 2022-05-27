@@ -17,6 +17,7 @@ import { AppointmentType, FilterOptions, Specialisms, DateRange } from '../types
 import { ButtonComponent } from './Button';
 import { updateFilterOptions } from '../actions/actions';
 import { updateSpecialismsArray, updateTypesArray } from '../utils/filterOptions';
+import moment from 'moment';
 
 interface MenuProps {
   filterOptions: FilterOptions;
@@ -134,7 +135,7 @@ export const FilterMenu = (props: MenuProps) => {
                   onChange={(newValue) => {
                     setEndDate(newValue);
                   }}
-                  minDate={startDate} //|| new Date() - can set current date as min date - however data is in 2021
+                  minDate={startDate || null} //|| new Date() - can set current date as min date - however data is in 2021
                   renderInput={(params) => <TextField {...params} sx={{ margin: '1em' }} />}
                 />
               </LocalizationProvider>

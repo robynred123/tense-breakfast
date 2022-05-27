@@ -37,24 +37,32 @@ export const updateFilterOptions = (filterOptions: FilterOptions) => (dispatch: 
   return dispatch(setFilterOptions(mappedFilterOptions));
 };
 
-const filterByDate = (
+const filterByDate = async (
   therapists: TherapistInfo[],
   response: Availabilities,
   start: string,
   end: string
-): TherapistInfo[] => {
+) => {
   const availableTherapists: TherapistInfo[] = [];
-  if (!start && !end) {
-    return therapists;
-  }
+
   therapists.forEach((therapist) => {
     const therapistId = therapist.id;
-    response[therapistId].forEach((availability) => {
-      const dateTime = moment(availability.datetime).format('ddd MMM D YYYY');
-      if (dateTime < start && dateTime > end && availableTherapists.includes(therapist) === false) {
-        availableTherapists.push(therapist);
-      }
-    });
+    const dateTimeArray = response[therapistId];
+    console.log(
+      dateTimeArray.some((entry) => {
+        const dateTime = entry.datetime; //Date.parse(entry.datetime);
+        return moment(dateTime).isBetween(start, end);
+      })
+    );
+    if (
+      dateTimeArray.some((entry) => {
+        const dateTime = entry.datetime;
+        return moment(dateTime).isBetween(start, end);
+      }) &&
+      availableTherapists.includes(therapist) === false
+    ) {
+      availableTherapists.push(therapist);
+    }
   });
   return availableTherapists;
 };
@@ -77,8 +85,8 @@ export const filterTherapists =
       if (start && end) {
         await axios
           .get('data/availability-mock.json')
-          .then((response: any) => {
-            const availabilities = filterByDate(therapists, response.data, start, end);
+          .then(async (response: any) => {
+            const availabilities = await filterByDate(therapists, response.data, start, end);
 
             filteredTherapists = filterHelper(availabilities, appointmentTypes, specialisms);
           })
