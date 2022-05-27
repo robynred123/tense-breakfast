@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { slice } from '../reducers/reducer';
 import { AppDispatch } from '../store';
+import moment from 'moment';
 import {
   AppointmentType,
   Availabilities,
@@ -18,35 +19,11 @@ type TherapistsResponse = {
   data: TherapistInfo[];
 };
 
-export const getAvailabilities = () => async () => {
-  await axios
-    .get('data/availability-mock.json')
-    .then((response: any) => {
-      return response.data as Availabilities;
-    })
-    .catch((error: any) => {
-      console.log(error);
-      return [];
-    });
-};
-
-const mapTherapists = (therapists: TherapistInfo[], availableTimes: Availabilities) => {
-  return therapists.forEach((therapist) => {
-    return {
-      ...therapist,
-      availabilities: availableTimes[therapist.id] || [],
-    };
-  });
-};
-
-export const getTherapists = (therapists: TherapistInfo[]) => async (dispatch: AppDispatch) => {
+export const getTherapists = () => async (dispatch: AppDispatch) => {
   await axios
     .get('data/counsellor-mock.json')
-    .then(async (response: TherapistsResponse) => {
-      const availabilities = await getAvailabilities();
-      const mappedTherapists: TherapistInfo[] = mapTherapists(therapists, availabilities);
-
-      dispatch(setTherapists(mappedTherapists));
+    .then((response: TherapistsResponse) => {
+      dispatch(setTherapists(response.data as TherapistInfo[]));
     })
     .catch((error: any) => console.log(error));
 };
@@ -58,6 +35,28 @@ export const updateFilterOptions = (filterOptions: FilterOptions) => (dispatch: 
     specialisms: filterOptions.specialisms,
   };
   return dispatch(setFilterOptions(mappedFilterOptions));
+};
+
+const filterByDate = (
+  therapists: TherapistInfo[],
+  response: Availabilities,
+  start: string,
+  end: string
+): TherapistInfo[] => {
+  const availableTherapists: TherapistInfo[] = [];
+  if (!start && !end) {
+    return therapists;
+  }
+  therapists.forEach((therapist) => {
+    const therapistId = therapist.id;
+    response[therapistId].forEach((availability) => {
+      const dateTime = moment(availability.datetime).format('ddd MMM D YYYY');
+      if (dateTime < start && dateTime > end && availableTherapists.includes(therapist) === false) {
+        availableTherapists.push(therapist);
+      }
+    });
+  });
+  return availableTherapists;
 };
 
 export const filterTherapists =
@@ -75,7 +74,18 @@ export const filterTherapists =
       dispatch(setFilteredTherapists(therapists));
     } else {
       let filteredTherapists;
-      filteredTherapists = filterHelper(therapists, appointmentTypes, specialisms);
+      if (start && end) {
+        await axios
+          .get('data/availability-mock.json')
+          .then((response: any) => {
+            const availabilities = filterByDate(therapists, response.data, start, end);
+
+            filteredTherapists = filterHelper(availabilities, appointmentTypes, specialisms);
+          })
+          .catch((error: any) => console.log(error));
+      } else {
+        filteredTherapists = filterHelper(therapists, appointmentTypes, specialisms);
+      }
       return filteredTherapists ? dispatch(setFilteredTherapists(filteredTherapists)) : null;
     }
   };

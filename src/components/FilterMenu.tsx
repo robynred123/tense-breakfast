@@ -125,7 +125,7 @@ export const FilterMenu = (props: MenuProps) => {
                   onChange={(newValue) => {
                     setStartDate(newValue);
                   }}
-                  minDate={new Date()}
+                  //minDate={new Date()}
                   renderInput={(params) => <TextField {...params} sx={{ margin: '1em' }} />}
                 />
                 <DatePicker
@@ -134,7 +134,7 @@ export const FilterMenu = (props: MenuProps) => {
                   onChange={(newValue) => {
                     setEndDate(newValue);
                   }}
-                  minDate={startDate || new Date()}
+                  minDate={startDate} //|| new Date() - can set current date as min date - however data is in 2021
                   renderInput={(params) => <TextField {...params} sx={{ margin: '1em' }} />}
                 />
               </LocalizationProvider>
