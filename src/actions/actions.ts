@@ -1,11 +1,9 @@
 import axios from 'axios';
 import { slice } from '../reducers/reducer';
 import { AppDispatch } from '../store';
-import moment from 'moment';
 import {
   AppointmentType,
   Availabilities,
-  AvailabilityData,
   DateRange,
   FilterOptions,
   Specialisms,
@@ -65,10 +63,12 @@ export const filterTherapists =
     } else {
       let filteredTherapists;
       if (start && end) {
+        // get available times and filter
         const data: Availabilities = await getAvailabilities();
         const availabilities = await filterByDate(therapists, data, start, end);
         filteredTherapists = filterHelper(availabilities, appointmentTypes, specialisms);
       } else {
+        // else just filter
         filteredTherapists = filterHelper(therapists, appointmentTypes, specialisms);
       }
       return filteredTherapists ? dispatch(setFilteredTherapists(filteredTherapists)) : null;

@@ -1,4 +1,5 @@
-import { updateTypesArray } from './filterOptions';
+import { FilterOptions } from '../types';
+import { updateTypesArray, updateSpecialismsArray, handleFilters } from './filterOptions';
 
 describe('updateTypesArray', () => {
   it('Should add type to array of options if not in it', () => {
@@ -8,5 +9,52 @@ describe('updateTypesArray', () => {
   it('Should remove type to array of options if not in it', () => {
     const array = updateTypesArray('one_off', ['one_off']);
     expect(array).toEqual([]);
+  });
+});
+
+describe('updateSpecialismsArray', () => {
+  it('Should add type to array of options if not in it', () => {
+    const array = updateSpecialismsArray('ADHD', []);
+    expect(array).toEqual(['ADHD']);
+  });
+  it('Should remove type to array of options if not in it', () => {
+    const array = updateSpecialismsArray('ADHD', ['ADHD']);
+    expect(array).toEqual([]);
+  });
+});
+
+describe('handleFilters', () => {
+  const options: FilterOptions = {
+    appointmentType: [],
+    dateRange: {
+      start: null,
+      end: null,
+    },
+    specialisms: [],
+  };
+  it('Should return updated types', () => {
+    const options = handleFilters('one_off', 'type', [], { start: null, end: null }, []);
+    expect(options).toEqual({ ...options, appointmentType: ['one_off'] });
+  });
+
+  it('Should return updated specialisms', () => {
+    const options = handleFilters('Hypnotherapy', 'specialism', [], { start: null, end: null }, []);
+    expect(options).toEqual({ ...options, specialisms: ['Hypnotherapy'] });
+  });
+
+  it('Should return updated dateRange', () => {
+    const testDate: string = '2021-08-05T09:00:00.000Z';
+    const options = handleFilters(
+      { start: testDate, end: testDate },
+      'date',
+      [],
+      { start: null, end: null },
+      []
+    );
+    expect(options).toEqual({ ...options, dateRange: { start: testDate, end: testDate } });
+  });
+  it('Should return default information with nothing new added', () => {
+    const options = handleFilters('', 'date', [], { start: null, end: null }, []);
+    expect(options).toEqual(options);
   });
 });

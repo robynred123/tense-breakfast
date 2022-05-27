@@ -11,7 +11,6 @@ export interface TherapistInfo {
   appointment_types: AppointmentType[];
   appointment_mediums: AppointmentMedium[];
   specialisms: Specialisms[];
-  availableAppointments?: Date[];
 }
 
 export interface DateRange {
@@ -27,6 +26,8 @@ export interface AvailabilityData {
 export interface Availabilities {
   [therapistId: string]: AvailabilityData[];
 }
+
+export type Type = 'date' | 'type' | 'specialism';
 
 export type AppointmentType = 'one_off' | 'consultation';
 export type AppointmentMedium = 'phone' | 'video';

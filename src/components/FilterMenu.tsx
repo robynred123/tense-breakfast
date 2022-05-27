@@ -13,17 +13,15 @@ import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 
 import { useAppDispatch } from '../store';
 import { DARK_GREY, GREY } from '../constants/colours';
-import { AppointmentType, FilterOptions, Specialisms, DateRange } from '../types';
+import { AppointmentType, FilterOptions, Specialisms, DateRange, Type } from '../types';
 import { ButtonComponent } from './Button';
 import { updateFilterOptions } from '../actions/actions';
-import { updateSpecialismsArray, updateTypesArray } from '../utils/filterOptions';
+import { handleFilters } from '../utils/filterOptions';
 
 interface MenuProps {
   filterOptions: FilterOptions;
   therapistSpecialisms: Specialisms[];
 }
-
-type Type = 'date' | 'type' | 'specialism';
 
 export const FilterMenu = (props: MenuProps) => {
   const { filterOptions, therapistSpecialisms } = props;
@@ -32,44 +30,13 @@ export const FilterMenu = (props: MenuProps) => {
   const [endDate, setEndDate] = useState<Date | null>(null);
   const dispatch = useAppDispatch();
 
-  // TODO: Move this to a util file
   const handleFilterChanges = (value: AppointmentType | Specialisms | DateRange, type: Type) => {
-    const newOptions: FilterOptions = {
-      appointmentType: appointmentType,
-      dateRange: {
-        start: dateRange.start,
-        end: dateRange.end,
-      },
-      specialisms: specialisms,
-    };
-    switch (type) {
-      case 'type':
-        return dispatch(
-          updateFilterOptions({
-            ...newOptions,
-            appointmentType: updateTypesArray(value as AppointmentType, appointmentType),
-          })
-        );
-      case 'specialism':
-        return dispatch(
-          updateFilterOptions({
-            ...newOptions,
-            specialisms: updateSpecialismsArray(value as Specialisms, specialisms),
-          })
-        );
-      case 'date':
-        return dispatch(
-          updateFilterOptions({
-            ...newOptions,
-            dateRange: value as DateRange,
-          })
-        );
-      default:
-        break;
-    }
+    return dispatch(
+      updateFilterOptions(handleFilters(value, type, appointmentType, dateRange, specialisms))
+    );
   };
 
-  // only filter when both dates have been selected - reducers number of actions dispatched & reloads
+  // only filter when both dates have been selected - reducers number of reloads
   useEffect(() => {
     if (startDate && endDate) {
       const dateRange = {

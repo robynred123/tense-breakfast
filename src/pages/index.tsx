@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
+import { Typography } from '@mui/material';
+
 import { getTherapists, filterTherapists } from '../actions/actions';
 import { TherapistCard } from '../components/TherapistCard';
 import { useAppDispatch, useAppSelector } from '../store';
 import { FilterMenu } from '../components/FilterMenu';
 import { Specialisms } from '../types';
 import { extractSpecialisms } from '../utils/mapper';
-import { Typography } from '@mui/material';
 
 export const Index = () => {
   const { therapists, filteredTherapists, filterOptions } = useAppSelector((state) => state.one);
