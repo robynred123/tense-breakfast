@@ -41,20 +41,49 @@ exports[`<TherapistCard /> Should render the Therapist Card component successful
         className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-10 css-uvmdr-MuiGrid-root"
       >
         <div
-          style={
-            Object {
-              "borderColor": "black",
-              "borderWidth": "10px",
-            }
-          }
+          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-8 css-vok43g-MuiGrid-root"
         >
-          <h4
-            className="MuiTypography-root MuiTypography-h4 css-od8ppe-MuiTypography-root"
+          <div
+            style={
+              Object {
+                "borderColor": "black",
+                "borderWidth": "10px",
+              }
+            }
           >
-            Albert
-             
-            Einstein
-          </h4>
+            <h4
+              className="MuiTypography-root MuiTypography-h4 css-od8ppe-MuiTypography-root"
+            >
+              Albert
+               
+              Einstein
+            </h4>
+          </div>
+        </div>
+        <div
+          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4 css-gj1fbr-MuiGrid-root"
+        >
+          <button
+            className="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root  css-17eaqzp-MuiButtonBase-root-MuiButton-root"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            Book
+          </button>
         </div>
       </div>
     </div>

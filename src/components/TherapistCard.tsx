@@ -4,9 +4,15 @@ import Grid from '@mui/material/Grid';
 import { AccountCircle } from '@mui/icons-material';
 import { DARK_GREY, TEAL } from '../constants/colours';
 import { TherapistInfo } from '../types';
+import { ButtonComponent } from './Button';
 
-export const TherapistCard = (props: TherapistInfo) => {
-  const therapist = props;
+type Props = {
+  therapist: TherapistInfo;
+  onClick: () => any;
+};
+
+export const TherapistCard = (props: Props) => {
+  const { therapist, onClick } = props;
   return (
     <div style={{ border: 'double', borderColor: DARK_GREY }}>
       <Box
@@ -23,11 +29,22 @@ export const TherapistCard = (props: TherapistInfo) => {
             <AccountCircle style={{ color: TEAL, height: '100%', width: '100%' }} />
           </Grid>
           <Grid item xs={10} sx={{ padding: '2%', alignItems: 'center', display: 'flex' }}>
-            <div style={{ borderWidth: '10px', borderColor: 'black' }}>
-              <Typography variant='h4' fontFamily={'lato, sans-serif'}>
-                {therapist.firstName} {therapist.lastName}
-              </Typography>
-            </div>
+            <Grid item xs={8}>
+              <div style={{ borderWidth: '10px', borderColor: 'black' }}>
+                <Typography variant='h4' fontFamily={'lato, sans-serif'}>
+                  {therapist.firstName} {therapist.lastName}
+                </Typography>
+              </div>
+            </Grid>
+            <Grid item xs={4}>
+              <ButtonComponent
+                onClick={onClick}
+                width='80%'
+                disabled={false}
+                text='Book'
+                buttonColour='gradient'
+              />
+            </Grid>
           </Grid>
         </Grid>
       </Box>

@@ -27,6 +27,8 @@ const setStyle = (buttonColour: string, sharedStyling: {}) => {
       return {
         ...sharedStyling,
         color: 'black',
+        fontWeight: 'bold',
+        paddng: '1em',
         backgroundImage: `linear-gradient(140deg, ${TEAL}, ${LIGHT_BLUE})`,
       };
     default:

@@ -14,9 +14,12 @@ describe('<TherapistCard />', () => {
       appointment_mediums: ['phone'],
       specialisms: ['alcoholism'],
     };
-    const view = renderer.create(<TherapistCard {...testTherapist} />);
+    const view = renderer.create(
+      <TherapistCard therapist={testTherapist} onClick={() => jest.fn()} />
+    );
     expect(view.toJSON()).toMatchSnapshot();
     expect(view.root.findByType('svg').props['data-testid']).toEqual('AccountCircleIcon');
     expect(view.root.findByType('h4').props.children).toEqual(['Albert', ' ', 'Einstein']);
+    expect(view.root.findByType('button').children).toEqual(['Book']);
   });
 });

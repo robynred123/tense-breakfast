@@ -46,7 +46,13 @@ export const Index = () => {
   const renderTherapists = () =>
     filteredTherapists.length > 0 ? (
       filteredTherapists.map((therapist) => {
-        return <TherapistCard key={therapist.id} {...therapist} />;
+        return (
+          <TherapistCard
+            key={therapist.id}
+            therapist={therapist}
+            onClick={() => console.log('clicked')}
+          />
+        );
       })
     ) : (
       <Typography variant='h3' sx={{ textAlign: 'center' }} fontFamily={'lato, sans-serif'}>
