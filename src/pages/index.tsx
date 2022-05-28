@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import { Typography, useMediaQuery, useTheme } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 import { getTherapists, filterTherapists, changeMobileFilter } from '../actions/actions';
 import { TherapistCard } from '../components/TherapistCard';
@@ -16,6 +17,7 @@ export const Index = () => {
   );
   const { appointmentType, dateRange, specialisms } = filterOptions;
   const [therapistSpecialisms, setTherapistSpecialisms] = useState<Specialisms[]>([]);
+  const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up('md'));
@@ -50,7 +52,7 @@ export const Index = () => {
           <TherapistCard
             key={therapist.id}
             therapist={therapist}
-            onClick={() => console.log('clicked')}
+            onClick={() => navigate('/Therapist', { state: { therapist: therapist } })}
           />
         );
       })
