@@ -22,8 +22,57 @@ exports[`<Layout /> Should render the layout component successfully 1`] = `
       />
     </div>
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-8 MuiGrid-grid-lg-8 css-vok43g-MuiGrid-root"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-8 css-1f4ohof-MuiGrid-root"
     />
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-2 MuiGrid-grid-md-2 MuiGrid-grid-lg-0 css-18c6h2b-MuiGrid-root"
+    >
+      <button
+        className="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onContextMenu={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        style={
+          Object {
+            "minHeight": "100%",
+            "width": "50%",
+          }
+        }
+        tabIndex={0}
+        type="button"
+      >
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+          data-testid="FilterAltIcon"
+          focusable="false"
+          style={
+            Object {
+              "color": "#FFFF",
+              "minHeight": "100%",
+              "minWidth": "75px",
+              "width": "50%",
+            }
+          }
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M4.25 5.61C6.27 8.2 10 13 10 13v6c0 .55.45 1 1 1h2c.55 0 1-.45 1-1v-6s3.72-4.8 5.74-7.39c.51-.66.04-1.61-.79-1.61H5.04c-.83 0-1.3.95-.79 1.61z"
+          />
+        </svg>
+      </button>
+    </div>
   </div>
 </div>
 `;

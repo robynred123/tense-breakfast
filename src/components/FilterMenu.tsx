@@ -55,6 +55,13 @@ export const FilterMenu = (props: MenuProps) => {
     } else return 'grey';
   };
 
+  const determineChecked = (specialism: Specialisms) => {
+    if (specialisms.includes(specialism)) {
+      return true;
+    }
+    return false;
+  };
+
   return (
     <Box
       sx={{
@@ -146,8 +153,9 @@ export const FilterMenu = (props: MenuProps) => {
                     key={specialism}
                     control={
                       <Checkbox
-                        defaultChecked={false}
+                        checked={determineChecked(specialism)}
                         onChange={() => handleFilterChanges(specialism, 'specialism')}
+                        inputProps={{ 'aria-label': 'controlled' }}
                       />
                     }
                     label={specialism}

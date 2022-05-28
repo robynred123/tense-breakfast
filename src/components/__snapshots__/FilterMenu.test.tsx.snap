@@ -232,9 +232,10 @@ exports[`<FilterMenu /> Should render the FilterMenu component successfully 1`] 
               tabIndex={null}
             >
               <input
+                aria-label="controlled"
+                checked={false}
                 className="PrivateSwitchBase-input css-1m9pwf3"
                 data-indeterminate={false}
-                defaultChecked={false}
                 onChange={[Function]}
                 type="checkbox"
               />
