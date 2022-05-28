@@ -36,15 +36,23 @@ export const updateFilterOptions = (filterOptions: FilterOptions) => (dispatch: 
 };
 
 export const getAvailabilities = async () => {
-  return await axios
+  let data: Availabilities = {};
+  await axios
     .get('data/availability-mock.json')
     .then(async (response: any) => {
-      return response.data;
+      return (data = response.data);
     })
     .catch((error: any) => {
       console.log(error);
-      return {};
     });
+  return data;
+};
+
+export const getAvailabilitiesById = async (therapistId: string) => {
+  const availabilities: Availabilities = await getAvailabilities();
+  if (availabilities !== {}) {
+    return availabilities[therapistId];
+  } else return [];
 };
 
 export const filterTherapists =
