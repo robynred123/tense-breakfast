@@ -44,12 +44,21 @@ export const Index = () => {
     );
 
   return (
-    <Box sx={{ flexGrow: 1, width: 1, flexDirection: 'row' }}>
+    <Box sx={{ flexGrow: 1, width: 1, flexDirection: 'row', wrap: 'nowrap' }}>
       <Grid container>
         <Grid item sm={12} xs={12} md={8} lg={8} sx={{ padding: '5%' }}>
           <div>{renderTherapists()}</div>
         </Grid>
-        <Grid item xs={0} sm={0} md={4} lg={4} sx={{ paddingTop: '5%', paddingRight: '5%' }}>
+        <Grid
+          item
+          md={4}
+          lg={4}
+          sx={{
+            paddingTop: '5%',
+            paddingRight: '5%',
+            display: { xs: 'none', sm: 'none', md: 'block', lg: 'block' },
+          }}
+        >
           <FilterMenu filterOptions={filterOptions} therapistSpecialisms={therapistSpecialisms} />
         </Grid>
       </Grid>

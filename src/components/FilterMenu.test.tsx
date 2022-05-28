@@ -17,7 +17,12 @@ describe('<FilterMenu />', () => {
     specialisms: [],
   };
   const therapistSpecialisms = ['ADHD'];
-  const initialState: ReducerState = { therapists: [], filteredTherapists: [], filterOptions };
+  const initialState: ReducerState = {
+    therapists: [],
+    filteredTherapists: [],
+    filterOptions,
+    mobileFilter: false,
+  };
   const mockStore = configureStore();
   let store: Store<any, AnyAction>;
   store = mockStore(initialState);

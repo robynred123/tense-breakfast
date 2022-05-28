@@ -11,7 +11,7 @@ import {
 } from '../types';
 import { filterByDate, filterHelper } from '../utils/filterHelpers';
 
-const { setTherapists, setFilterOptions, setFilteredTherapists } = slice.actions;
+const { setTherapists, setFilterOptions, setFilteredTherapists, setMobileFilter } = slice.actions;
 
 type TherapistsResponse = {
   data: TherapistInfo[];
@@ -74,3 +74,7 @@ export const filterTherapists =
       return filteredTherapists ? dispatch(setFilteredTherapists(filteredTherapists)) : null;
     }
   };
+
+export const toggleMobileFilter = () => (dispatch: AppDispatch) => {
+  return dispatch(setMobileFilter());
+};

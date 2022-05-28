@@ -12,6 +12,7 @@ const initialState: ReducerState = {
     },
     specialisms: [],
   },
+  mobileFilter: false,
 };
 
 export const slice = createSlice({
@@ -35,6 +36,9 @@ export const slice = createSlice({
     },
     setFilteredTherapists: (state, action: PayloadAction<TherapistInfo[]>) => {
       state.filteredTherapists = action.payload;
+    },
+    setMobileFilter: (state, action: PayloadAction) => {
+      state.mobileFilter = !state.mobileFilter;
     },
   },
 });

@@ -45,6 +45,7 @@ export const FilterMenu = (props: MenuProps) => {
       };
       handleFilterChanges(dateRange, 'date');
     }
+    // disabled to prevent needing to wrap handleFilterChanges in a useCallBack hook
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [startDate, endDate]);
 
