@@ -37,8 +37,8 @@ export const slice = createSlice({
     setFilteredTherapists: (state, action: PayloadAction<TherapistInfo[]>) => {
       state.filteredTherapists = action.payload;
     },
-    setMobileFilter: (state, action: PayloadAction) => {
-      state.mobileFilter = !state.mobileFilter;
+    setMobileFilter: (state, action: PayloadAction<boolean>) => {
+      state.mobileFilter = action.payload;
     },
   },
 });

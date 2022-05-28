@@ -3,7 +3,7 @@ import Grid from '@mui/material/Grid';
 import { Close, FilterAlt } from '@mui/icons-material';
 import { IconButton } from '@mui/material';
 
-import { toggleMobileFilter } from '../actions/actions';
+import { changeMobileFilter } from '../actions/actions';
 import { BLUE, WHITE } from '../constants/colours';
 import { useAppDispatch, useAppSelector } from '../store';
 
@@ -26,14 +26,14 @@ export const Header = () => {
           {mobileFilter ? (
             <IconButton
               style={{ minHeight: '100%', width: '50%' }}
-              onClick={() => dispatch(toggleMobileFilter())}
+              onClick={() => dispatch(changeMobileFilter(false))}
             >
               <Close style={{ color: WHITE, minHeight: '100%', width: '50%', minWidth: '75px' }} />
             </IconButton>
           ) : (
             <IconButton
               style={{ minHeight: '100%', width: '50%' }}
-              onClick={() => dispatch(toggleMobileFilter())}
+              onClick={() => dispatch(changeMobileFilter(true))}
             >
               <FilterAlt
                 style={{ color: WHITE, minHeight: '100%', width: '50%', minWidth: '75px' }}

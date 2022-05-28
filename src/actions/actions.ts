@@ -75,6 +75,6 @@ export const filterTherapists =
     }
   };
 
-export const toggleMobileFilter = () => (dispatch: AppDispatch) => {
-  return dispatch(setMobileFilter());
+export const changeMobileFilter = (value: boolean) => (dispatch: AppDispatch) => {
+  return dispatch(setMobileFilter(value));
 };
