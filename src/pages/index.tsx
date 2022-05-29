@@ -27,13 +27,13 @@ export const Index = () => {
     // on load screen, get therapists
     if (therapists.length === 0 && !firstTimeLoad) {
       dispatch(getTherapists());
-      setFirstTimeLoad(true);
     }
     if (therapistSpecialisms.length === 0) {
       // after loading therapists, extract specialisms.
       const newSpecialisms = extractSpecialisms(therapists, therapistSpecialisms);
       setTherapistSpecialisms(newSpecialisms);
     }
+    setFirstTimeLoad(true);
   }, [dispatch, firstTimeLoad, therapists, therapistSpecialisms]);
 
   useEffect(() => {
