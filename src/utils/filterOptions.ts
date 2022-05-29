@@ -1,5 +1,14 @@
 import { AppointmentType, DateRange, Specialisms, Type, FilterOptions } from '../types';
 
+export const determineSelectedType = (
+  value: AppointmentType,
+  appointmentType: AppointmentType[]
+) => {
+  if (appointmentType.includes(value)) {
+    return 'green';
+  } else return 'grey';
+};
+
 export const updateTypesArray = (value: AppointmentType, optionsArray: AppointmentType[]) => {
   if (optionsArray.includes(value)) {
     const newArray = optionsArray.filter((type) => type !== value);

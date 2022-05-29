@@ -16,7 +16,7 @@ import { DARK_GREY, GREY } from '../constants/colours';
 import { AppointmentType, FilterOptions, Specialisms, DateRange, Type } from '../types';
 import { ButtonComponent } from './Button';
 import { updateFilterOptions } from '../actions/actions';
-import { handleFilters } from '../utils/filterOptions';
+import { determineSelectedType, handleFilters } from '../utils/filterOptions';
 
 interface MenuProps {
   filterOptions: FilterOptions;
@@ -48,12 +48,6 @@ export const FilterMenu = (props: MenuProps) => {
     // disabled to prevent needing to wrap handleFilterChanges in a useCallBack hook
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [startDate, endDate]);
-
-  const determineSelectedType = (value: AppointmentType) => {
-    if (appointmentType.includes(value)) {
-      return 'green';
-    } else return 'grey';
-  };
 
   const determineChecked = (specialism: Specialisms) => {
     if (specialisms.includes(specialism)) {
@@ -126,14 +120,14 @@ export const FilterMenu = (props: MenuProps) => {
             <ButtonComponent
               onClick={() => handleFilterChanges('one_off', 'type')}
               text='One Off'
-              buttonColour={determineSelectedType('one_off')}
+              buttonColour={determineSelectedType('one_off', appointmentType)}
               disabled={false}
               width={'40%'}
             />
             <ButtonComponent
               onClick={() => handleFilterChanges('consultation', 'type')}
               text='Consultation'
-              buttonColour={determineSelectedType('consultation')}
+              buttonColour={determineSelectedType('consultation', appointmentType)}
               disabled={false}
               width={'40%'}
             />
