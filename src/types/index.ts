@@ -44,5 +44,5 @@ export type BookingOptions = {
   therapistId: string;
   appointmentType: AppointmentType | null;
   apppointmentMedium: AppointmentMedium | null;
-  AppointmentDate: string;
+  appointmentDate: string;
 };

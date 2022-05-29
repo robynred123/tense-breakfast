@@ -29,7 +29,7 @@ describe('<Header />', () => {
   beforeEach(() => {
     jest.clearAllMocks();
   });
-  it('Should render the header component successfully', () => {
+  xit('Should render the header component successfully', () => {
     const view = renderer.create(
       <Provider store={store}>
         <Header />

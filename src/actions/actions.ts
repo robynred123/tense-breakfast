@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { NavigateFunction } from 'react-router-dom';
 import { slice } from '../reducers/reducer';
 import { AppDispatch } from '../store';
 import {
@@ -12,7 +13,13 @@ import {
 } from '../types';
 import { filterByDate, filterHelper } from '../utils/filterHelpers';
 
-const { setTherapists, setFilterOptions, setFilteredTherapists, setMobileFilter } = slice.actions;
+const {
+  setTherapists,
+  setFilterOptions,
+  setFilteredTherapists,
+  setMobileFilter,
+  clearFilterOptions,
+} = slice.actions;
 
 type TherapistsResponse = {
   data: TherapistInfo[];
@@ -88,18 +95,14 @@ export const changeMobileFilter = (value: boolean) => (dispatch: AppDispatch) =>
   return dispatch(setMobileFilter(value));
 };
 
-export const bookingRequest = (bookingOptions: BookingOptions) => async (dispatch: AppDispatch) => {
-  const data = bookingOptions;
-  console.log(data);
-  const res = await axios.post('http://localhost:4000/bookingRequests', data);
-  console.log(res);
-  /*const newFilterOptions: FilterOptions = {
-        appointmentType: [],
-        dateRange: {
-          start: null,
-          end: null,
-        },
-        specialisms: [],
-      };
-      return dispatch(setFilterOptions(newFilterOptions));*/
-};
+export const bookingRequest =
+  (bookingOptions: BookingOptions, navigate: NavigateFunction) => async (dispatch: AppDispatch) => {
+    console.log(bookingOptions);
+    await axios
+      .post('http://localhost:4000/bookingRequests', bookingOptions)
+      .then((response) => {
+        dispatch(clearFilterOptions());
+        return navigate('/Success');
+      })
+      .catch((error) => console.log(error));
+  };

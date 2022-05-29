@@ -8,6 +8,8 @@ import { Provider } from 'react-redux';
 import { Index } from './pages/index';
 import { Layout } from './pages/Layout';
 import { TherapistPage } from './pages/Therapist';
+import { SuccessPage } from './pages/Success';
+import { ConfirmPage } from './pages/Confirm';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
@@ -15,7 +17,9 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route element={<Layout />}>
-          <Route path='/:Therapist' element={<TherapistPage />} />
+          <Route path='/Confirm' element={<ConfirmPage />} />
+          <Route path='/Success' element={<SuccessPage />} />
+          <Route path='/Therapist' element={<TherapistPage />} />
           <Route path='/' element={<Index />} />
         </Route>
       </Routes>

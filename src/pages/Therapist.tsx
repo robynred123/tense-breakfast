@@ -4,13 +4,18 @@ import { Box, Grid, IconButton, MenuItem, Select, Typography } from '@mui/materi
 import { useLocation, useNavigate } from 'react-router-dom';
 import moment from 'moment';
 
-import { bookingRequest, getAvailabilitiesById } from '../actions/actions';
+import { getAvailabilitiesById } from '../actions/actions';
 import { ButtonComponent } from '../components/Button';
 import { DARK_GREY, TEAL, WHITE } from '../constants/colours';
 import { mockBio } from '../constants/mockInfo';
-import { AvailabilityData, TherapistInfo, AppointmentType, AppointmentMedium } from '../types';
+import {
+  AvailabilityData,
+  TherapistInfo,
+  AppointmentType,
+  AppointmentMedium,
+  BookingOptions,
+} from '../types';
 import { determineSelectedType } from '../utils/filterOptions';
-import { useAppDispatch } from '../store';
 
 interface State {
   therapist: TherapistInfo;
@@ -22,10 +27,9 @@ export const TherapistPage = () => {
   const [availabilities, setAvailabilities] = useState<AvailabilityData[] | null>(null);
   const [type, setType] = useState<AppointmentType | null>(null);
   const [medium, setMedium] = useState<AppointmentMedium | null>(null);
-  const [time, setTime] = useState<any>('');
+  const [time, setTime] = useState<string>('');
 
   const navigate = useNavigate();
-  const dispatch = useAppDispatch();
 
   useEffect(() => {
     const asyncFetch = async () => {
@@ -39,13 +43,20 @@ export const TherapistPage = () => {
   }, [therapist]);
 
   const handleSubmit = () => {
-    const bookingOptions = {
+    const appointment = availabilities?.find((a) => a.id === time);
+    const bookingOptions: BookingOptions = {
       therapistId: therapist.id,
       appointmentType: type,
       apppointmentMedium: medium,
-      AppointmentDate: time,
+      appointmentDate: time,
     };
-    return dispatch(bookingRequest(bookingOptions));
+    return navigate('/Confirm', {
+      state: {
+        bookingOptions: bookingOptions,
+        therapistName: `${therapist.firstName} ${therapist.lastName}`,
+        dateTime: appointment,
+      },
+    });
   };
 
   const determineColour = (button: AppointmentMedium, type: string | null) => {
@@ -260,7 +271,7 @@ export const TherapistPage = () => {
 
                   <ButtonComponent
                     onClick={() => handleSubmit()}
-                    text='Submit'
+                    text='Book'
                     buttonColour={'green'}
                     disabled={determineBookDisabled()}
                     width={'40%'}

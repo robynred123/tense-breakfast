@@ -34,6 +34,9 @@ export const slice = createSlice({
         specialisms: specialisms,
       };
     },
+    clearFilterOptions: (state, action: PayloadAction) => {
+      state.filterOptions = initialState.filterOptions;
+    },
     setFilteredTherapists: (state, action: PayloadAction<TherapistInfo[]>) => {
       state.filteredTherapists = action.payload;
     },
