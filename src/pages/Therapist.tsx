@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import { Circle, Phone, VideoCall } from '@mui/icons-material';
 import { Box, Grid, IconButton, MenuItem, Select, Typography } from '@mui/material';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import moment from 'moment';
+
 import { getAvailabilitiesById } from '../actions/actions';
 import { ButtonComponent } from '../components/Button';
 import { DARK_GREY, TEAL, WHITE } from '../constants/colours';
@@ -16,16 +17,21 @@ interface State {
 
 export const TherapistPage = () => {
   const { state } = useLocation();
+  const navigate = useNavigate();
   const { therapist } = state as State;
   const [availabilities, setAvailabilities] = useState<AvailabilityData[] | null>(null);
   const [type, setType] = useState<AppointmentType>('one_off');
   const [medium, setMedium] = useState<AppointmentMedium>('phone');
   const [time, setTime] = useState<any>('');
 
+  console.log(time);
+
   useEffect(() => {
     const asyncFetch = async () => {
       const availabilities = await getAvailabilitiesById(therapist.id);
-      return setAvailabilities(availabilities);
+      return setAvailabilities(
+        availabilities.sort((a, b) => Date.parse(a.datetime) - Date.parse(b.datetime))
+      );
     };
 
     asyncFetch();
@@ -118,14 +124,14 @@ export const TherapistPage = () => {
                     onClick={() => setType('one_off')}
                     text='One Off'
                     buttonColour={determineSelectedType('one_off', [type])}
-                    disabled={false}
+                    disabled={!therapist.appointment_types.includes('one_off')}
                     width={'40%'}
                   />
                   <ButtonComponent
                     onClick={() => setType('consultation')}
                     text='Consultation'
                     buttonColour={determineSelectedType('consultation', [type])}
-                    disabled={false}
+                    disabled={!therapist.appointment_types.includes('consultation')}
                     width={'40%'}
                   />
                 </Grid>
@@ -151,6 +157,7 @@ export const TherapistPage = () => {
                         borderRadius: 10,
                         flexDirection: 'column',
                       }}
+                      disabled={!therapist.appointment_mediums.includes('phone')}
                       onClick={() => setMedium('phone')}
                     >
                       <Phone
@@ -178,6 +185,7 @@ export const TherapistPage = () => {
                         borderRadius: 10,
                         flexDirection: 'column',
                       }}
+                      disabled={!therapist.appointment_mediums.includes('video')}
                       onClick={() => setMedium('video')}
                     >
                       <VideoCall
@@ -197,6 +205,32 @@ export const TherapistPage = () => {
                       </Typography>
                     </IconButton>
                   </Grid>
+                </Grid>
+                {/* Submit and Cancel buttons */}
+                <Grid
+                  container
+                  sx={{
+                    paddingTop: '3em',
+                    flexDirection: 'row',
+                    justifyContent: 'space-evenly',
+                    alignContent: 'flex-end',
+                  }}
+                >
+                  <ButtonComponent
+                    onClick={() => navigate(-1)}
+                    text='Cancel'
+                    buttonColour={'grey'}
+                    disabled={false}
+                    width={'40%'}
+                  />
+
+                  <ButtonComponent
+                    onClick={() => console.log('submit')}
+                    text='Submit'
+                    buttonColour={'green'}
+                    disabled={false}
+                    width={'40%'}
+                  />
                 </Grid>
               </Grid>
             </Grid>
