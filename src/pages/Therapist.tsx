@@ -20,11 +20,9 @@ export const TherapistPage = () => {
   const navigate = useNavigate();
   const { therapist } = state as State;
   const [availabilities, setAvailabilities] = useState<AvailabilityData[] | null>(null);
-  const [type, setType] = useState<AppointmentType>('one_off');
-  const [medium, setMedium] = useState<AppointmentMedium>('phone');
+  const [type, setType] = useState<AppointmentType | null>(null);
+  const [medium, setMedium] = useState<AppointmentMedium | null>(null);
   const [time, setTime] = useState<any>('');
-
-  console.log(time);
 
   useEffect(() => {
     const asyncFetch = async () => {
@@ -37,10 +35,25 @@ export const TherapistPage = () => {
     asyncFetch();
   }, [therapist]);
 
-  const determineColour = (button: AppointmentMedium, type: string) => {
+  const determineColour = (button: AppointmentMedium, type: string | null) => {
     if (type === 'text') {
       return medium === button ? 'black' : WHITE;
     } else return medium === button ? TEAL : DARK_GREY;
+  };
+
+  const determineBookDisabled = () => {
+    if (availabilities !== null && availabilities.length) {
+      return true;
+    }
+    if (availabilities !== null && availabilities.length > 0 && !time) {
+      return true;
+    }
+    if (therapist.appointment_types.length > 0 && !type) {
+      return true;
+    }
+    if (therapist.appointment_mediums.length > 0 && !medium) {
+      return true;
+    } else return false;
   };
 
   return (
@@ -51,6 +64,7 @@ export const TherapistPage = () => {
           <Grid item sm={4} md={4} lg={4} xl={4}>
             <Circle style={{ color: TEAL, minHeight: '300px', width: '100%' }} />
           </Grid>
+
           {/* Therapist Name */}
           <Grid
             item
@@ -67,6 +81,7 @@ export const TherapistPage = () => {
             >
               {therapist.firstName} {therapist.lastName}
             </Typography>
+
             {/* Bio section */}
             <Typography
               variant='body1'
@@ -108,104 +123,110 @@ export const TherapistPage = () => {
                 </Grid>
               </Grid>
             </Grid>
-            {/* Appointment Type */}
             <Grid container sx={{ paddingTop: '3em', flexDirection: 'column' }}>
-              <Grid item sm={12} md={12} lg={12} xl={12}>
-                <Typography
-                  variant='h5'
-                  fontFamily={'lato, sans-serif'}
-                  sx={{ justifyContent: 'flex-start' }}
-                >
-                  Appointment Type
-                </Typography>
-
-                <Grid item sx={{ justifyContent: 'space-evenly', display: 'flex' }}>
-                  <ButtonComponent
-                    onClick={() => setType('one_off')}
-                    text='One Off'
-                    buttonColour={determineSelectedType('one_off', [type])}
-                    disabled={!therapist.appointment_types.includes('one_off')}
-                    width={'40%'}
-                  />
-                  <ButtonComponent
-                    onClick={() => setType('consultation')}
-                    text='Consultation'
-                    buttonColour={determineSelectedType('consultation', [type])}
-                    disabled={!therapist.appointment_types.includes('consultation')}
-                    width={'40%'}
-                  />
-                </Grid>
-              </Grid>
-
-              {/* Appointment Method */}
-              <Grid container sx={{ paddingTop: '3em', flexDirection: 'column' }}>
+              {/* Appointment Type */}
+              {therapist.appointment_types.length > 0 && (
                 <Grid item sm={12} md={12} lg={12} xl={12}>
                   <Typography
                     variant='h5'
                     fontFamily={'lato, sans-serif'}
                     sx={{ justifyContent: 'flex-start' }}
                   >
-                    Appointment Medium
+                    Appointment Type
                   </Typography>
 
                   <Grid item sx={{ justifyContent: 'space-evenly', display: 'flex' }}>
-                    <IconButton
-                      style={{
-                        minHeight: '80px',
-                        width: '40%',
-                        backgroundColor: determineColour('phone', 'button'),
-                        borderRadius: 10,
-                        flexDirection: 'column',
-                      }}
-                      disabled={!therapist.appointment_mediums.includes('phone')}
-                      onClick={() => setMedium('phone')}
-                    >
-                      <Phone
-                        style={{
-                          color: determineColour('phone', 'text'),
-                          minHeight: '90%',
-                          width: '100%',
-                          minWidth: '75px',
-                          padding: 0,
-                        }}
-                      />
-                      <Typography
-                        color={determineColour('phone', 'text')}
-                        fontFamily={'lato, sans-serif'}
-                      >
-                        Phone
-                      </Typography>
-                    </IconButton>
-
-                    <IconButton
-                      style={{
-                        minHeight: '80px',
-                        width: '40%',
-                        backgroundColor: determineColour('video', 'button'),
-                        borderRadius: 10,
-                        flexDirection: 'column',
-                      }}
-                      disabled={!therapist.appointment_mediums.includes('video')}
-                      onClick={() => setMedium('video')}
-                    >
-                      <VideoCall
-                        style={{
-                          color: determineColour('video', 'text'),
-                          minHeight: '90%',
-                          width: '100%',
-                          minWidth: '75px',
-                          padding: 0,
-                        }}
-                      />
-                      <Typography
-                        color={determineColour('video', 'text')}
-                        fontFamily={'lato, sans-serif'}
-                      >
-                        Video
-                      </Typography>
-                    </IconButton>
+                    <ButtonComponent
+                      onClick={() => setType('one_off')}
+                      text='One Off'
+                      buttonColour={determineSelectedType('one_off', [type as AppointmentType])}
+                      disabled={!therapist.appointment_types.includes('one_off')}
+                      width={'40%'}
+                    />
+                    <ButtonComponent
+                      onClick={() => setType('consultation')}
+                      text='Consultation'
+                      buttonColour={determineSelectedType('consultation', [
+                        type as AppointmentType,
+                      ])}
+                      disabled={!therapist.appointment_types.includes('consultation')}
+                      width={'40%'}
+                    />
                   </Grid>
                 </Grid>
+              )}
+
+              {/* Appointment Method */}
+              <Grid container sx={{ paddingTop: '3em', flexDirection: 'column' }}>
+                {therapist.appointment_mediums.length > 0 && (
+                  <Grid item sm={12} md={12} lg={12} xl={12}>
+                    <Typography
+                      variant='h5'
+                      fontFamily={'lato, sans-serif'}
+                      sx={{ justifyContent: 'flex-start' }}
+                    >
+                      Appointment Medium
+                    </Typography>
+
+                    <Grid item sx={{ justifyContent: 'space-evenly', display: 'flex' }}>
+                      <IconButton
+                        style={{
+                          minHeight: '80px',
+                          width: '40%',
+                          backgroundColor: determineColour('phone', 'button'),
+                          borderRadius: 10,
+                          flexDirection: 'column',
+                        }}
+                        disabled={!therapist.appointment_mediums.includes('phone')}
+                        onClick={() => setMedium('phone')}
+                      >
+                        <Phone
+                          style={{
+                            color: determineColour('phone', 'text'),
+                            minHeight: '90%',
+                            width: '100%',
+                            minWidth: '75px',
+                            padding: 0,
+                          }}
+                        />
+                        <Typography
+                          color={determineColour('phone', 'text')}
+                          fontFamily={'lato, sans-serif'}
+                        >
+                          Phone
+                        </Typography>
+                      </IconButton>
+
+                      <IconButton
+                        style={{
+                          minHeight: '80px',
+                          width: '40%',
+                          backgroundColor: determineColour('video', 'button'),
+                          borderRadius: 10,
+                          flexDirection: 'column',
+                        }}
+                        disabled={!therapist.appointment_mediums.includes('video')}
+                        onClick={() => setMedium('video')}
+                      >
+                        <VideoCall
+                          style={{
+                            color: determineColour('video', 'text'),
+                            minHeight: '90%',
+                            width: '100%',
+                            minWidth: '75px',
+                            padding: 0,
+                          }}
+                        />
+                        <Typography
+                          color={determineColour('video', 'text')}
+                          fontFamily={'lato, sans-serif'}
+                        >
+                          Video
+                        </Typography>
+                      </IconButton>
+                    </Grid>
+                  </Grid>
+                )}
                 {/* Submit and Cancel buttons */}
                 <Grid
                   container
@@ -228,7 +249,7 @@ export const TherapistPage = () => {
                     onClick={() => console.log('submit')}
                     text='Submit'
                     buttonColour={'green'}
-                    disabled={false}
+                    disabled={determineBookDisabled()}
                     width={'40%'}
                   />
                 </Grid>
