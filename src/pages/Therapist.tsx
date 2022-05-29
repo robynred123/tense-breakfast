@@ -1,10 +1,11 @@
-import { Circle, Phone, VideoCall } from '@mui/icons-material';
-import { Box, Grid, IconButton, Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
+import { Circle, Phone, VideoCall } from '@mui/icons-material';
+import { Box, Grid, IconButton, MenuItem, Select, Typography } from '@mui/material';
 import { useLocation } from 'react-router-dom';
+import moment from 'moment';
 import { getAvailabilitiesById } from '../actions/actions';
 import { ButtonComponent } from '../components/Button';
-import { DARK_GREY, GREY, TEAL, WHITE } from '../constants/colours';
+import { DARK_GREY, TEAL, WHITE } from '../constants/colours';
 import { mockBio } from '../constants/mockInfo';
 import { AvailabilityData, TherapistInfo, AppointmentType, AppointmentMedium } from '../types';
 import { determineSelectedType } from '../utils/filterOptions';
@@ -19,11 +20,12 @@ export const TherapistPage = () => {
   const [availabilities, setAvailabilities] = useState<AvailabilityData[] | null>(null);
   const [type, setType] = useState<AppointmentType>('one_off');
   const [medium, setMedium] = useState<AppointmentMedium>('phone');
+  const [time, setTime] = useState<any>('');
 
   useEffect(() => {
     const asyncFetch = async () => {
-      const availabiities = await getAvailabilitiesById(therapist.id);
-      return setAvailabilities(availabiities);
+      const availabilities = await getAvailabilitiesById(therapist.id);
+      return setAvailabilities(availabilities);
     };
 
     asyncFetch();
@@ -67,6 +69,39 @@ export const TherapistPage = () => {
             >
               {mockBio}
             </Typography>
+
+            {/* Appointment Time */}
+            <Grid container sx={{ paddingTop: '3em', flexDirection: 'column' }}>
+              <Grid item sm={12} md={12} lg={12} xl={12}>
+                <Typography
+                  variant='h5'
+                  fontFamily={'lato, sans-serif'}
+                  sx={{ justifyContent: 'flex-start' }}
+                >
+                  Appointment Time
+                </Typography>
+
+                <Grid item sx={{ justifyContent: 'space-evenly', display: 'flex' }}>
+                  <Select
+                    value={time}
+                    onChange={(e) => setTime(e.target.value)}
+                    sx={{ width: '90%' }}
+                  >
+                    {availabilities ? (
+                      availabilities.map((appointment) => {
+                        return (
+                          <MenuItem value={appointment.datetime} key={appointment.id}>
+                            {moment(appointment.datetime).format('LLLL')}
+                          </MenuItem>
+                        );
+                      })
+                    ) : (
+                      <p>No Appointments Available</p>
+                    )}
+                  </Select>
+                </Grid>
+              </Grid>
+            </Grid>
             {/* Appointment Type */}
             <Grid container sx={{ paddingTop: '3em', flexDirection: 'column' }}>
               <Grid item sm={12} md={12} lg={12} xl={12}>
@@ -78,14 +113,7 @@ export const TherapistPage = () => {
                   Appointment Type
                 </Typography>
 
-                <Grid
-                  item
-                  sm={12}
-                  md={12}
-                  lg={12}
-                  xl={12}
-                  sx={{ justifyContent: 'space-evenly', display: 'flex' }}
-                >
+                <Grid item sx={{ justifyContent: 'space-evenly', display: 'flex' }}>
                   <ButtonComponent
                     onClick={() => setType('one_off')}
                     text='One Off'
@@ -114,14 +142,7 @@ export const TherapistPage = () => {
                     Appointment Medium
                   </Typography>
 
-                  <Grid
-                    item
-                    sm={12}
-                    md={12}
-                    lg={12}
-                    xl={12}
-                    sx={{ justifyContent: 'space-evenly', display: 'flex' }}
-                  >
+                  <Grid item sx={{ justifyContent: 'space-evenly', display: 'flex' }}>
                     <IconButton
                       style={{
                         minHeight: '80px',
