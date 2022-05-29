@@ -17,6 +17,7 @@ export const Index = () => {
   );
   const { appointmentType, dateRange, specialisms } = filterOptions;
   const [therapistSpecialisms, setTherapistSpecialisms] = useState<Specialisms[]>([]);
+  const [firstTimeLoad, setFirstTimeLoad] = useState<boolean>(false);
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const theme = useTheme();
@@ -24,15 +25,16 @@ export const Index = () => {
 
   useEffect(() => {
     // on load screen, get therapists
-    if (therapists.length === 0) {
+    if (therapists.length === 0 && !firstTimeLoad) {
       dispatch(getTherapists());
+      setFirstTimeLoad(true);
     }
     if (therapistSpecialisms.length === 0) {
       // after loading therapists, extract specialisms.
       const newSpecialisms = extractSpecialisms(therapists, therapistSpecialisms);
       setTherapistSpecialisms(newSpecialisms);
     }
-  }, [dispatch, therapists, therapistSpecialisms]);
+  }, [dispatch, firstTimeLoad, therapists, therapistSpecialisms]);
 
   useEffect(() => {
     dispatch(filterTherapists(therapists, appointmentType, dateRange, specialisms));

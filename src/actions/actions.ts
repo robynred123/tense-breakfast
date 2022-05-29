@@ -4,6 +4,7 @@ import { AppDispatch } from '../store';
 import {
   AppointmentType,
   Availabilities,
+  BookingOptions,
   DateRange,
   FilterOptions,
   Specialisms,
@@ -19,7 +20,7 @@ type TherapistsResponse = {
 
 export const getTherapists = () => async (dispatch: AppDispatch) => {
   await axios
-    .get('data/counsellor-mock.json')
+    .get('http://localhost:4000/therapists')
     .then((response: TherapistsResponse) => {
       dispatch(setTherapists(response.data as TherapistInfo[]));
     })
@@ -38,7 +39,7 @@ export const updateFilterOptions = (filterOptions: FilterOptions) => (dispatch: 
 export const getAvailabilities = async () => {
   let data: Availabilities = {};
   await axios
-    .get('data/availability-mock.json')
+    .get('http://localhost:4000/availabilities')
     .then(async (response: any) => {
       return (data = response.data);
     })
@@ -85,4 +86,20 @@ export const filterTherapists =
 
 export const changeMobileFilter = (value: boolean) => (dispatch: AppDispatch) => {
   return dispatch(setMobileFilter(value));
+};
+
+export const bookingRequest = (bookingOptions: BookingOptions) => async (dispatch: AppDispatch) => {
+  const data = bookingOptions;
+  console.log(data);
+  const res = await axios.post('http://localhost:4000/bookingRequests', data);
+  console.log(res);
+  /*const newFilterOptions: FilterOptions = {
+        appointmentType: [],
+        dateRange: {
+          start: null,
+          end: null,
+        },
+        specialisms: [],
+      };
+      return dispatch(setFilterOptions(newFilterOptions));*/
 };

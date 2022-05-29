@@ -4,12 +4,13 @@ import { Box, Grid, IconButton, MenuItem, Select, Typography } from '@mui/materi
 import { useLocation, useNavigate } from 'react-router-dom';
 import moment from 'moment';
 
-import { getAvailabilitiesById } from '../actions/actions';
+import { bookingRequest, getAvailabilitiesById } from '../actions/actions';
 import { ButtonComponent } from '../components/Button';
 import { DARK_GREY, TEAL, WHITE } from '../constants/colours';
 import { mockBio } from '../constants/mockInfo';
 import { AvailabilityData, TherapistInfo, AppointmentType, AppointmentMedium } from '../types';
 import { determineSelectedType } from '../utils/filterOptions';
+import { useAppDispatch } from '../store';
 
 interface State {
   therapist: TherapistInfo;
@@ -17,12 +18,14 @@ interface State {
 
 export const TherapistPage = () => {
   const { state } = useLocation();
-  const navigate = useNavigate();
   const { therapist } = state as State;
   const [availabilities, setAvailabilities] = useState<AvailabilityData[] | null>(null);
   const [type, setType] = useState<AppointmentType | null>(null);
   const [medium, setMedium] = useState<AppointmentMedium | null>(null);
   const [time, setTime] = useState<any>('');
+
+  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     const asyncFetch = async () => {
@@ -35,6 +38,16 @@ export const TherapistPage = () => {
     asyncFetch();
   }, [therapist]);
 
+  const handleSubmit = () => {
+    const bookingOptions = {
+      therapistId: therapist.id,
+      appointmentType: type,
+      apppointmentMedium: medium,
+      AppointmentDate: time,
+    };
+    return dispatch(bookingRequest(bookingOptions));
+  };
+
   const determineColour = (button: AppointmentMedium, type: string | null) => {
     if (type === 'text') {
       return medium === button ? 'black' : WHITE;
@@ -42,7 +55,7 @@ export const TherapistPage = () => {
   };
 
   const determineBookDisabled = () => {
-    if (availabilities !== null && availabilities.length) {
+    if (availabilities == null || availabilities.length === 0) {
       return true;
     }
     if (availabilities !== null && availabilities.length > 0 && !time) {
@@ -111,7 +124,7 @@ export const TherapistPage = () => {
                     {availabilities ? (
                       availabilities.map((appointment) => {
                         return (
-                          <MenuItem value={appointment.datetime} key={appointment.id}>
+                          <MenuItem value={appointment.id} key={appointment.id}>
                             {moment(appointment.datetime).format('LLLL')}
                           </MenuItem>
                         );
@@ -246,7 +259,7 @@ export const TherapistPage = () => {
                   />
 
                   <ButtonComponent
-                    onClick={() => console.log('submit')}
+                    onClick={() => handleSubmit()}
                     text='Submit'
                     buttonColour={'green'}
                     disabled={determineBookDisabled()}

@@ -39,3 +39,10 @@ export type FilterOptions = {
   dateRange: DateRange;
   specialisms: Specialisms[];
 };
+
+export type BookingOptions = {
+  therapistId: string;
+  appointmentType: AppointmentType | null;
+  apppointmentMedium: AppointmentMedium | null;
+  AppointmentDate: string;
+};
