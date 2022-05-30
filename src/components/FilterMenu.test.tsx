@@ -2,7 +2,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
-import { mockStore, initialState, filterOptions } from '../../mocks/mockStore';
+import { mockStore, initialState, filterOptions } from '../mocks/mockStore';
 import { FilterMenu } from './FilterMenu';
 
 describe('<FilterMenu />', () => {

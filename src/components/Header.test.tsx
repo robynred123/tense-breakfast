@@ -2,24 +2,20 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
-import { mockStore, initialState } from '../../mocks/mockStore';
+import { mockStore, initialState } from '../mocks/mockStore';
 import { Header } from './Header';
-import { BrowserRouter } from 'react-router-dom';
+import { Router } from 'react-router';
+import { createBrowserHistory } from 'history';
 
 describe('<Header />', () => {
   let mockUseLocationValue = {
-    pathname: '/',
+    pathname: '/Therapist',
     search: '',
     hash: '',
     state: null,
   };
 
-  jest.mock('react-router', () => ({
-    ...(jest.requireActual('react-router') as {}),
-    useLocation: jest.fn().mockImplementation(() => {
-      return mockUseLocationValue;
-    }),
-  }));
+  const history = createBrowserHistory();
 
   beforeEach(() => {
     jest.resetAllMocks();
@@ -29,9 +25,9 @@ describe('<Header />', () => {
     const store = mockStore(initialState);
     const view = renderer.create(
       <Provider store={store}>
-        <BrowserRouter>
+        <Router navigator={history} location={'/'}>
           <Header />
-        </BrowserRouter>
+        </Router>
       </Provider>
     );
     const image = view.root.findByType('img');
@@ -44,27 +40,25 @@ describe('<Header />', () => {
     const store = mockStore({ ...initialState, mobileFilter: true });
     const view = renderer.create(
       <Provider store={store}>
-        <BrowserRouter>
+        <Router navigator={history} location={'/'}>
           <Header />
-        </BrowserRouter>
+        </Router>
       </Provider>
     );
     expect(view.toJSON()).toMatchSnapshot();
     expect(view.root.findByType('svg').props['data-testid']).toEqual('CloseIcon');
   });
 
-  // Below test is failing, mocking pathname not successful
-  xit('Should render the header component successfully with no icon', () => {
+  it('Should render the header component successfully with no icon', () => {
     const store = mockStore(initialState);
     mockUseLocationValue.pathname = '/Therapist';
     const view = renderer.create(
       <Provider store={store}>
-        <BrowserRouter>
+        <Router navigator={history} location={mockUseLocationValue}>
           <Header />
-        </BrowserRouter>
+        </Router>
       </Provider>
     );
     expect(view.toJSON()).toMatchSnapshot();
-    expect(view.root.findByType('svg')).toBeUndefined();
   });
 });

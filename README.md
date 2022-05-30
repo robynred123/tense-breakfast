@@ -12,10 +12,6 @@ Once these are installed, please run the following command using the terminal in
 
 ```npm install```
 
-And follow this by installing [json-server](https://www.npmjs.com/package/json-server#getting-started) globally.
-
-```npm install -g json-server```
-
 Once complete successfully, run the following command in the terminal
 
 ```npm run run:server```

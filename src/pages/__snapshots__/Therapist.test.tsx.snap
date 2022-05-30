@@ -1,0 +1,356 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TherapistPage /> Should render the Therapist page successfully 1`] = `
+<div
+  className="MuiBox-root css-rjqiu3"
+>
+  <div
+    className="MuiGrid-root MuiGrid-container css-11lq3yg-MuiGrid-root"
+  >
+    <div
+      className="MuiGrid-root MuiGrid-container css-k6wrnl-MuiGrid-root"
+    >
+      <div
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-4 MuiGrid-grid-md-4 MuiGrid-grid-lg-4 MuiGrid-grid-xl-4 css-kgs8gf-MuiGrid-root"
+      >
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+          data-testid="CircleIcon"
+          focusable="false"
+          style={
+            Object {
+              "color": "#35D0BA",
+              "minHeight": "300px",
+              "width": "100%",
+            }
+          }
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2z"
+          />
+        </svg>
+      </div>
+      <div
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-8 MuiGrid-grid-md-8 MuiGrid-grid-lg-8 MuiGrid-grid-xl-8 css-nzahwq-MuiGrid-root"
+      >
+        <h2
+          className="MuiTypography-root MuiTypography-h2 css-18neeym-MuiTypography-root"
+        >
+          Albert
+           
+          Einstein
+        </h2>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-efofzw-MuiTypography-root"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dictum feugiat nisl at condimentum. Pellentesque venenatis augue non ante fringilla euismod. Fusce tempus ultricies malesuada. Fusce eu volutpat nisi. Suspendisse viverra efficitur dui, efficitur rhoncus purus luctus ut. In ut eros maximus, viverra lorem sit amet, pellentesque massa. 
+        </p>
+        <div
+          className="MuiGrid-root MuiGrid-container css-ro30o1-MuiGrid-root"
+        >
+          <div
+            className="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-md-12 MuiGrid-grid-lg-12 MuiGrid-grid-xl-12 css-13shxg4-MuiGrid-root"
+          >
+            <h5
+              className="MuiTypography-root MuiTypography-h5 css-x242tx-MuiTypography-root"
+            >
+              Appointment Time
+            </h5>
+            <div
+              className="MuiGrid-root MuiGrid-item css-1urxl9a-MuiGrid-root"
+            >
+              <div
+                className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary  css-t8rt5h-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
+                onClick={[Function]}
+              >
+                <div
+                  aria-expanded="false"
+                  aria-haspopup="listbox"
+                  className="MuiSelect-select MuiSelect-outlined MuiOutlinedInput-input MuiInputBase-input css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input"
+                  onBlur={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onMouseDown={[Function]}
+                  role="button"
+                  tabIndex={0}
+                >
+                  <span
+                    className="notranslate"
+                  >
+                    ​
+                  </span>
+                </div>
+                <input
+                  aria-hidden={true}
+                  className="MuiSelect-nativeInput css-yf8vq0-MuiSelect-nativeInput"
+                  onAnimationStart={[Function]}
+                  onChange={[Function]}
+                  tabIndex={-1}
+                  value=""
+                />
+                <svg
+                  aria-hidden={true}
+                  className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconOutlined css-hfutr2-MuiSvgIcon-root-MuiSelect-icon"
+                  data-testid="ArrowDropDownIcon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M7 10l5 5 5-5z"
+                  />
+                </svg>
+                <fieldset
+                  aria-hidden={true}
+                  className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                >
+                  <legend
+                    className="css-hdw1oc"
+                  >
+                    <span
+                      className="notranslate"
+                    >
+                      ​
+                    </span>
+                  </legend>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="MuiGrid-root MuiGrid-container css-ro30o1-MuiGrid-root"
+        >
+          <div
+            className="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-md-12 MuiGrid-grid-lg-12 MuiGrid-grid-xl-12 css-13shxg4-MuiGrid-root"
+          >
+            <h5
+              className="MuiTypography-root MuiTypography-h5 css-x242tx-MuiTypography-root"
+            >
+              Appointment Type
+            </h5>
+            <div
+              className="MuiGrid-root MuiGrid-item css-1urxl9a-MuiGrid-root"
+            >
+              <button
+                className="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root  css-1d5f0aw-MuiButtonBase-root-MuiButton-root"
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onContextMenu={[Function]}
+                onDragLeave={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                One Off
+              </button>
+              <button
+                className="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root Mui-disabled  css-1d5f0aw-MuiButtonBase-root-MuiButton-root"
+                disabled={true}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onContextMenu={[Function]}
+                onDragLeave={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                tabIndex={-1}
+                type="button"
+              >
+                Consultation
+              </button>
+            </div>
+          </div>
+          <div
+            className="MuiGrid-root MuiGrid-container css-ro30o1-MuiGrid-root"
+          >
+            <div
+              className="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-md-12 MuiGrid-grid-lg-12 MuiGrid-grid-xl-12 css-13shxg4-MuiGrid-root"
+            >
+              <h5
+                className="MuiTypography-root MuiTypography-h5 css-x242tx-MuiTypography-root"
+              >
+                Appointment Medium
+              </h5>
+              <div
+                className="MuiGrid-root MuiGrid-item css-1urxl9a-MuiGrid-root"
+              >
+                <button
+                  className="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onContextMenu={[Function]}
+                  onDragLeave={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  style={
+                    Object {
+                      "backgroundColor": "#374151",
+                      "borderRadius": 10,
+                      "flexDirection": "column",
+                      "minHeight": "80px",
+                      "width": "40%",
+                    }
+                  }
+                  tabIndex={0}
+                  type="button"
+                >
+                  <svg
+                    aria-hidden={true}
+                    className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                    data-testid="PhoneIcon"
+                    focusable="false"
+                    style={
+                      Object {
+                        "color": "#FFFF",
+                        "minHeight": "90%",
+                        "minWidth": "75px",
+                        "padding": 0,
+                        "width": "100%",
+                      }
+                    }
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
+                    />
+                  </svg>
+                  <p
+                    className="MuiTypography-root MuiTypography-body1 css-ags0sf-MuiTypography-root"
+                  >
+                    Phone
+                  </p>
+                </button>
+                <button
+                  className="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                  disabled={true}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onContextMenu={[Function]}
+                  onDragLeave={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  style={
+                    Object {
+                      "backgroundColor": "#374151",
+                      "borderRadius": 10,
+                      "flexDirection": "column",
+                      "minHeight": "80px",
+                      "width": "40%",
+                    }
+                  }
+                  tabIndex={-1}
+                  type="button"
+                >
+                  <svg
+                    aria-hidden={true}
+                    className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                    data-testid="VideoCallIcon"
+                    focusable="false"
+                    style={
+                      Object {
+                        "color": "#FFFF",
+                        "minHeight": "90%",
+                        "minWidth": "75px",
+                        "padding": 0,
+                        "width": "100%",
+                      }
+                    }
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4zM14 13h-3v3H9v-3H6v-2h3V8h2v3h3v2z"
+                    />
+                  </svg>
+                  <p
+                    className="MuiTypography-root MuiTypography-body1 css-ags0sf-MuiTypography-root"
+                  >
+                    Video
+                  </p>
+                </button>
+              </div>
+            </div>
+            <div
+              className="MuiGrid-root MuiGrid-container css-1idcksl-MuiGrid-root"
+            >
+              <button
+                className="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root  css-1d5f0aw-MuiButtonBase-root-MuiButton-root"
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onContextMenu={[Function]}
+                onDragLeave={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Cancel
+              </button>
+              <button
+                className="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root Mui-disabled  css-1ehb03l-MuiButtonBase-root-MuiButton-root"
+                disabled={true}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onContextMenu={[Function]}
+                onDragLeave={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                tabIndex={-1}
+                type="button"
+              >
+                Book
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
