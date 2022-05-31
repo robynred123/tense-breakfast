@@ -34,14 +34,15 @@ export const getTherapists = () => async (dispatch: AppDispatch) => {
     .catch((error: any) => console.log(error));
 };
 
-export const updateFilterOptions = (filterOptions: FilterOptions) => (dispatch: AppDispatch) => {
-  const mappedFilterOptions: FilterOptions = {
-    appointmentType: filterOptions.appointmentType,
-    dateRange: filterOptions.dateRange,
-    specialisms: filterOptions.specialisms,
+export const updateFilterOptions =
+  (filterOptions: FilterOptions) => async (dispatch: AppDispatch) => {
+    const mappedFilterOptions: FilterOptions = {
+      appointmentType: filterOptions.appointmentType,
+      dateRange: filterOptions.dateRange,
+      specialisms: filterOptions.specialisms,
+    };
+    return dispatch(setFilterOptions(mappedFilterOptions));
   };
-  return dispatch(setFilterOptions(mappedFilterOptions));
-};
 
 export const getAvailabilities = async () => {
   let data: Availabilities = {};
@@ -97,7 +98,6 @@ export const changeMobileFilter = (value: boolean) => (dispatch: AppDispatch) =>
 
 export const bookingRequest =
   (bookingOptions: BookingOptions, navigate: NavigateFunction) => async (dispatch: AppDispatch) => {
-    console.log(bookingOptions);
     await axios
       .post('http://localhost:4000/bookingRequests', bookingOptions)
       .then((response) => {

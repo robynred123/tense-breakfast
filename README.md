@@ -14,7 +14,7 @@ Once these are installed, please run the following command using the terminal in
 
 Once complete successfully, run the following command in the terminal
 
-```npm run run:server```
+```npm run start:server```
 
 This will run the json server on port 4000.
 Then open a second terminal (keeping the first open), and enter the following command to run the application:

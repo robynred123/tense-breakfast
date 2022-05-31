@@ -36,10 +36,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:server": "cd ./json-server && node server",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "run:server": "cd ./json-server && node server"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
