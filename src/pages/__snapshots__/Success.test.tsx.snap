@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SuccessPage /> Should render the Success Page successfully 1`] = `
+<div
+  className="MuiBox-root css-1rq3dmv"
+>
+  <div
+    className="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-md-12 MuiGrid-grid-lg-12 css-dmqau3-MuiGrid-root"
+  >
+    <h2
+      className="MuiTypography-root MuiTypography-h2 css-a4vnku-MuiTypography-root"
+    >
+      Appointment Requested
+    </h2>
+    <h3
+      className="MuiTypography-root MuiTypography-h3 css-vj3jzm-MuiTypography-root"
+    >
+      You will receive confirmation shortly
+    </h3>
+  </div>
+  <div
+    className="MuiGrid-root MuiGrid-item MuiGrid-grid-lg-12 css-1aiqtfq-MuiGrid-root"
+  >
+    <button
+      className="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root  css-cq6rpw-MuiButtonBase-root-MuiButton-root"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onContextMenu={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      OK
+    </button>
+  </div>
+</div>
+`;

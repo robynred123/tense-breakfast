@@ -1,0 +1,1097 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Index /> Should render the Index page successfully 1`] = `
+<div
+  className="MuiBox-root css-1rq3dmv"
+>
+  <div
+    className="MuiGrid-root MuiGrid-container css-11lq3yg-MuiGrid-root"
+  >
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-8 MuiGrid-grid-lg-8 css-1n00i09-MuiGrid-root"
+    >
+      <div>
+        <h3
+          className="MuiTypography-root MuiTypography-h3 css-cbgodw-MuiTypography-root"
+        >
+          No Therapists Found Matching Selected Filters
+        </h3>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-md-4 MuiGrid-grid-lg-4 css-c8h2hg-MuiGrid-root"
+    >
+      <div
+        className="MuiBox-root css-nr4a5l"
+      >
+        <div
+          className="MuiGrid-root MuiGrid-container css-1t09gft-MuiGrid-root"
+        >
+          <div
+            className="MuiGrid-root MuiGrid-item css-1llorz5-MuiGrid-root"
+          >
+            <h4
+              className="MuiTypography-root MuiTypography-h4 css-od8ppe-MuiTypography-root"
+            >
+              Filter Results
+            </h4>
+          </div>
+        </div>
+        <div
+          className="MuiGrid-root MuiGrid-container css-14ldd2u-MuiGrid-root"
+        >
+          <div
+            className="MuiGrid-root MuiGrid-container css-11lq3yg-MuiGrid-root"
+          >
+            <div
+              className="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
+            >
+              <h5
+                className="MuiTypography-root MuiTypography-h5 css-1mzsfvt-MuiTypography-root"
+              >
+                Dates
+              </h5>
+            </div>
+            <div
+              className="MuiGrid-root MuiGrid-container css-1tedp6a-MuiGrid-root"
+            >
+              <div
+                className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
+              >
+                <div
+                  className="MuiFormControl-root MuiTextField-root css-49mig2-MuiFormControl-root-MuiTextField-root"
+                >
+                  <label
+                    className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
+                    data-shrink={false}
+                    htmlFor=":r0:"
+                    id=":r0:-label"
+                  >
+                    Start Date
+                  </label>
+                  <div
+                    className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
+                    onClick={[Function]}
+                  >
+                    <input
+                      aria-invalid={false}
+                      aria-label="Choose date"
+                      aria-readonly={true}
+                      autoFocus={false}
+                      className="MuiOutlinedInput-input MuiInputBase-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+                      id=":r0:"
+                      onAnimationStart={[Function]}
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      readOnly={true}
+                      required={false}
+                      type="text"
+                      value=""
+                    />
+                    <fieldset
+                      aria-hidden={true}
+                      className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                    >
+                      <legend
+                        className="css-1ftyaf0"
+                      >
+                        <span>
+                          Start Date
+                        </span>
+                      </legend>
+                    </fieldset>
+                  </div>
+                </div>
+                <div
+                  className="MuiFormControl-root MuiTextField-root css-49mig2-MuiFormControl-root-MuiTextField-root"
+                >
+                  <label
+                    className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
+                    data-shrink={false}
+                    htmlFor=":r2:"
+                    id=":r2:-label"
+                  >
+                    End Date
+                  </label>
+                  <div
+                    className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
+                    onClick={[Function]}
+                  >
+                    <input
+                      aria-invalid={false}
+                      aria-label="Choose date"
+                      aria-readonly={true}
+                      autoFocus={false}
+                      className="MuiOutlinedInput-input MuiInputBase-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+                      id=":r2:"
+                      onAnimationStart={[Function]}
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      readOnly={true}
+                      required={false}
+                      type="text"
+                      value=""
+                    />
+                    <fieldset
+                      aria-hidden={true}
+                      className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                    >
+                      <legend
+                        className="css-1ftyaf0"
+                      >
+                        <span>
+                          End Date
+                        </span>
+                      </legend>
+                    </fieldset>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="MuiGrid-root MuiGrid-container css-6hqven-MuiGrid-root"
+          >
+            <div
+              className="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
+            >
+              <h5
+                className="MuiTypography-root MuiTypography-h5 css-1mzsfvt-MuiTypography-root"
+              >
+                Appointment Type
+              </h5>
+            </div>
+            <div
+              className="MuiGrid-root MuiGrid-container css-p54wsc-MuiGrid-root"
+            >
+              <button
+                className="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root  css-1d5f0aw-MuiButtonBase-root-MuiButton-root"
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onContextMenu={[Function]}
+                onDragLeave={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                One Off
+              </button>
+              <button
+                className="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root  css-1d5f0aw-MuiButtonBase-root-MuiButton-root"
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onContextMenu={[Function]}
+                onDragLeave={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Consultation
+              </button>
+            </div>
+          </div>
+          <div
+            className="MuiGrid-root MuiGrid-container css-11lq3yg-MuiGrid-root"
+          >
+            <div
+              className="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
+            >
+              <h5
+                className="MuiTypography-root MuiTypography-h5 css-1mzsfvt-MuiTypography-root"
+              >
+                Specialism
+              </h5>
+            </div>
+            <div
+              className="MuiGrid-root MuiGrid-container css-119qa06-MuiGrid-root"
+            >
+              <div
+                className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Index /> Should render the Index page successfully with a therapist 1`] = `
+<div
+  className="MuiBox-root css-1rq3dmv"
+>
+  <div
+    className="MuiGrid-root MuiGrid-container css-11lq3yg-MuiGrid-root"
+  >
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-8 MuiGrid-grid-lg-8 css-1n00i09-MuiGrid-root"
+    >
+      <div>
+        <div
+          style={
+            Object {
+              "border": "double",
+              "borderColor": "#374151",
+            }
+          }
+        >
+          <div
+            className="MuiBox-root css-1caqi7t"
+          >
+            <div
+              className="MuiGrid-root MuiGrid-container css-11lq3yg-MuiGrid-root"
+            >
+              <div
+                className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-2 css-1o7apob-MuiGrid-root"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                  data-testid="AccountCircleIcon"
+                  focusable="false"
+                  style={
+                    Object {
+                      "color": "#35D0BA",
+                      "height": "100%",
+                      "width": "100%",
+                    }
+                  }
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
+                  />
+                </svg>
+              </div>
+              <div
+                className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-10 css-uvmdr-MuiGrid-root"
+              >
+                <div
+                  className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-8 css-vok43g-MuiGrid-root"
+                >
+                  <div
+                    style={
+                      Object {
+                        "borderColor": "black",
+                        "borderWidth": "10px",
+                      }
+                    }
+                  >
+                    <h4
+                      className="MuiTypography-root MuiTypography-h4 css-od8ppe-MuiTypography-root"
+                    >
+                      Albert
+                       
+                      Einstein
+                    </h4>
+                  </div>
+                </div>
+                <div
+                  className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4 css-gj1fbr-MuiGrid-root"
+                >
+                  <button
+                    className="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root  css-17eaqzp-MuiButtonBase-root-MuiButton-root"
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                    onDragLeave={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    Book
+                    <span
+                      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-md-4 MuiGrid-grid-lg-4 css-c8h2hg-MuiGrid-root"
+    >
+      <div
+        className="MuiBox-root css-nr4a5l"
+      >
+        <div
+          className="MuiGrid-root MuiGrid-container css-1t09gft-MuiGrid-root"
+        >
+          <div
+            className="MuiGrid-root MuiGrid-item css-1llorz5-MuiGrid-root"
+          >
+            <h4
+              className="MuiTypography-root MuiTypography-h4 css-od8ppe-MuiTypography-root"
+            >
+              Filter Results
+            </h4>
+          </div>
+        </div>
+        <div
+          className="MuiGrid-root MuiGrid-container css-14ldd2u-MuiGrid-root"
+        >
+          <div
+            className="MuiGrid-root MuiGrid-container css-11lq3yg-MuiGrid-root"
+          >
+            <div
+              className="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
+            >
+              <h5
+                className="MuiTypography-root MuiTypography-h5 css-1mzsfvt-MuiTypography-root"
+              >
+                Dates
+              </h5>
+            </div>
+            <div
+              className="MuiGrid-root MuiGrid-container css-1tedp6a-MuiGrid-root"
+            >
+              <div
+                className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
+              >
+                <div
+                  className="MuiFormControl-root MuiTextField-root css-49mig2-MuiFormControl-root-MuiTextField-root"
+                >
+                  <label
+                    className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
+                    data-shrink={false}
+                    htmlFor=":r4:"
+                    id=":r4:-label"
+                  >
+                    Start Date
+                  </label>
+                  <div
+                    className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
+                    onClick={[Function]}
+                  >
+                    <input
+                      aria-invalid={false}
+                      aria-label="Choose date"
+                      aria-readonly={true}
+                      autoFocus={false}
+                      className="MuiOutlinedInput-input MuiInputBase-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+                      id=":r4:"
+                      onAnimationStart={[Function]}
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      readOnly={true}
+                      required={false}
+                      type="text"
+                      value=""
+                    />
+                    <fieldset
+                      aria-hidden={true}
+                      className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                    >
+                      <legend
+                        className="css-1ftyaf0"
+                      >
+                        <span>
+                          Start Date
+                        </span>
+                      </legend>
+                    </fieldset>
+                  </div>
+                </div>
+                <div
+                  className="MuiFormControl-root MuiTextField-root css-49mig2-MuiFormControl-root-MuiTextField-root"
+                >
+                  <label
+                    className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
+                    data-shrink={false}
+                    htmlFor=":r6:"
+                    id=":r6:-label"
+                  >
+                    End Date
+                  </label>
+                  <div
+                    className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
+                    onClick={[Function]}
+                  >
+                    <input
+                      aria-invalid={false}
+                      aria-label="Choose date"
+                      aria-readonly={true}
+                      autoFocus={false}
+                      className="MuiOutlinedInput-input MuiInputBase-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+                      id=":r6:"
+                      onAnimationStart={[Function]}
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      readOnly={true}
+                      required={false}
+                      type="text"
+                      value=""
+                    />
+                    <fieldset
+                      aria-hidden={true}
+                      className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                    >
+                      <legend
+                        className="css-1ftyaf0"
+                      >
+                        <span>
+                          End Date
+                        </span>
+                      </legend>
+                    </fieldset>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="MuiGrid-root MuiGrid-container css-6hqven-MuiGrid-root"
+          >
+            <div
+              className="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
+            >
+              <h5
+                className="MuiTypography-root MuiTypography-h5 css-1mzsfvt-MuiTypography-root"
+              >
+                Appointment Type
+              </h5>
+            </div>
+            <div
+              className="MuiGrid-root MuiGrid-container css-p54wsc-MuiGrid-root"
+            >
+              <button
+                className="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root  css-1d5f0aw-MuiButtonBase-root-MuiButton-root"
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onContextMenu={[Function]}
+                onDragLeave={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                One Off
+                <span
+                  className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                />
+              </button>
+              <button
+                className="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root  css-1d5f0aw-MuiButtonBase-root-MuiButton-root"
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onContextMenu={[Function]}
+                onDragLeave={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Consultation
+                <span
+                  className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+          <div
+            className="MuiGrid-root MuiGrid-container css-11lq3yg-MuiGrid-root"
+          >
+            <div
+              className="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
+            >
+              <h5
+                className="MuiTypography-root MuiTypography-h5 css-1mzsfvt-MuiTypography-root"
+              >
+                Specialism
+              </h5>
+            </div>
+            <div
+              className="MuiGrid-root MuiGrid-container css-119qa06-MuiGrid-root"
+            >
+              <div
+                className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
+              >
+                <label
+                  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-j204z7-MuiFormControlLabel-root"
+                >
+                  <span
+                    className="MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
+                    onBlur={[Function]}
+                    onContextMenu={[Function]}
+                    onDragLeave={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    tabIndex={null}
+                  >
+                    <input
+                      aria-label="controlled"
+                      checked={false}
+                      className="PrivateSwitchBase-input css-1m9pwf3"
+                      data-indeterminate={false}
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                    <svg
+                      aria-hidden={true}
+                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                      data-testid="CheckBoxOutlineBlankIcon"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                    <span
+                      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </span>
+                  <span
+                    className="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-ahj2mt-MuiTypography-root"
+                  >
+                    Alcoholism
+                  </span>
+                </label>
+                <label
+                  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-j204z7-MuiFormControlLabel-root"
+                >
+                  <span
+                    className="MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
+                    onBlur={[Function]}
+                    onContextMenu={[Function]}
+                    onDragLeave={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    tabIndex={null}
+                  >
+                    <input
+                      aria-label="controlled"
+                      checked={false}
+                      className="PrivateSwitchBase-input css-1m9pwf3"
+                      data-indeterminate={false}
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                    <svg
+                      aria-hidden={true}
+                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                      data-testid="CheckBoxOutlineBlankIcon"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                    <span
+                      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </span>
+                  <span
+                    className="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-ahj2mt-MuiTypography-root"
+                  >
+                    Gambling Addiction
+                  </span>
+                </label>
+                <label
+                  className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-j204z7-MuiFormControlLabel-root"
+                >
+                  <span
+                    className="MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
+                    onBlur={[Function]}
+                    onContextMenu={[Function]}
+                    onDragLeave={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    tabIndex={null}
+                  >
+                    <input
+                      aria-label="controlled"
+                      checked={false}
+                      className="PrivateSwitchBase-input css-1m9pwf3"
+                      data-indeterminate={false}
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                    <svg
+                      aria-hidden={true}
+                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                      data-testid="CheckBoxOutlineBlankIcon"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                    <span
+                      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </span>
+                  <span
+                    className="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-ahj2mt-MuiTypography-root"
+                  >
+                    Gender identity
+                  </span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Index /> Should render the Index page successfully with only filter menu 1`] = `
+<div
+  className="MuiBox-root css-1rq3dmv"
+>
+  <div
+    className="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-md-12 MuiGrid-grid-lg-12 css-vzqj0m-MuiGrid-root"
+  >
+    <div
+      className="MuiBox-root css-nr4a5l"
+    >
+      <div
+        className="MuiGrid-root MuiGrid-container css-1t09gft-MuiGrid-root"
+      >
+        <div
+          className="MuiGrid-root MuiGrid-item css-1llorz5-MuiGrid-root"
+        >
+          <h4
+            className="MuiTypography-root MuiTypography-h4 css-od8ppe-MuiTypography-root"
+          >
+            Filter Results
+          </h4>
+        </div>
+      </div>
+      <div
+        className="MuiGrid-root MuiGrid-container css-14ldd2u-MuiGrid-root"
+      >
+        <div
+          className="MuiGrid-root MuiGrid-container css-11lq3yg-MuiGrid-root"
+        >
+          <div
+            className="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
+          >
+            <h5
+              className="MuiTypography-root MuiTypography-h5 css-1mzsfvt-MuiTypography-root"
+            >
+              Dates
+            </h5>
+          </div>
+          <div
+            className="MuiGrid-root MuiGrid-container css-1tedp6a-MuiGrid-root"
+          >
+            <div
+              className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
+            >
+              <div
+                className="MuiFormControl-root MuiTextField-root css-49mig2-MuiFormControl-root-MuiTextField-root"
+              >
+                <label
+                  className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
+                  data-shrink={false}
+                  htmlFor=":r8:"
+                  id=":r8:-label"
+                >
+                  Start Date
+                </label>
+                <div
+                  className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
+                  onClick={[Function]}
+                >
+                  <input
+                    aria-invalid={false}
+                    aria-label="Choose date"
+                    aria-readonly={true}
+                    autoFocus={false}
+                    className="MuiOutlinedInput-input MuiInputBase-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+                    id=":r8:"
+                    onAnimationStart={[Function]}
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    readOnly={true}
+                    required={false}
+                    type="text"
+                    value=""
+                  />
+                  <fieldset
+                    aria-hidden={true}
+                    className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                  >
+                    <legend
+                      className="css-1ftyaf0"
+                    >
+                      <span>
+                        Start Date
+                      </span>
+                    </legend>
+                  </fieldset>
+                </div>
+              </div>
+              <div
+                className="MuiFormControl-root MuiTextField-root css-49mig2-MuiFormControl-root-MuiTextField-root"
+              >
+                <label
+                  className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
+                  data-shrink={false}
+                  htmlFor=":ra:"
+                  id=":ra:-label"
+                >
+                  End Date
+                </label>
+                <div
+                  className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
+                  onClick={[Function]}
+                >
+                  <input
+                    aria-invalid={false}
+                    aria-label="Choose date"
+                    aria-readonly={true}
+                    autoFocus={false}
+                    className="MuiOutlinedInput-input MuiInputBase-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+                    id=":ra:"
+                    onAnimationStart={[Function]}
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    readOnly={true}
+                    required={false}
+                    type="text"
+                    value=""
+                  />
+                  <fieldset
+                    aria-hidden={true}
+                    className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                  >
+                    <legend
+                      className="css-1ftyaf0"
+                    >
+                      <span>
+                        End Date
+                      </span>
+                    </legend>
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="MuiGrid-root MuiGrid-container css-6hqven-MuiGrid-root"
+        >
+          <div
+            className="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
+          >
+            <h5
+              className="MuiTypography-root MuiTypography-h5 css-1mzsfvt-MuiTypography-root"
+            >
+              Appointment Type
+            </h5>
+          </div>
+          <div
+            className="MuiGrid-root MuiGrid-container css-p54wsc-MuiGrid-root"
+          >
+            <button
+              className="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root  css-1d5f0aw-MuiButtonBase-root-MuiButton-root"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onContextMenu={[Function]}
+              onDragLeave={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              One Off
+              <span
+                className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+              />
+            </button>
+            <button
+              className="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root  css-1d5f0aw-MuiButtonBase-root-MuiButton-root"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onContextMenu={[Function]}
+              onDragLeave={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              Consultation
+              <span
+                className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+              />
+            </button>
+          </div>
+        </div>
+        <div
+          className="MuiGrid-root MuiGrid-container css-11lq3yg-MuiGrid-root"
+        >
+          <div
+            className="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
+          >
+            <h5
+              className="MuiTypography-root MuiTypography-h5 css-1mzsfvt-MuiTypography-root"
+            >
+              Specialism
+            </h5>
+          </div>
+          <div
+            className="MuiGrid-root MuiGrid-container css-119qa06-MuiGrid-root"
+          >
+            <div
+              className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
+            >
+              <label
+                className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-j204z7-MuiFormControlLabel-root"
+              >
+                <span
+                  className="MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
+                  onBlur={[Function]}
+                  onContextMenu={[Function]}
+                  onDragLeave={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  tabIndex={null}
+                >
+                  <input
+                    aria-label="controlled"
+                    checked={false}
+                    className="PrivateSwitchBase-input css-1m9pwf3"
+                    data-indeterminate={false}
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  <svg
+                    aria-hidden={true}
+                    className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                    data-testid="CheckBoxOutlineBlankIcon"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                    />
+                  </svg>
+                  <span
+                    className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                  />
+                </span>
+                <span
+                  className="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-ahj2mt-MuiTypography-root"
+                >
+                  Alcoholism
+                </span>
+              </label>
+              <label
+                className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-j204z7-MuiFormControlLabel-root"
+              >
+                <span
+                  className="MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
+                  onBlur={[Function]}
+                  onContextMenu={[Function]}
+                  onDragLeave={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  tabIndex={null}
+                >
+                  <input
+                    aria-label="controlled"
+                    checked={false}
+                    className="PrivateSwitchBase-input css-1m9pwf3"
+                    data-indeterminate={false}
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  <svg
+                    aria-hidden={true}
+                    className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                    data-testid="CheckBoxOutlineBlankIcon"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                    />
+                  </svg>
+                  <span
+                    className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                  />
+                </span>
+                <span
+                  className="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-ahj2mt-MuiTypography-root"
+                >
+                  Gambling Addiction
+                </span>
+              </label>
+              <label
+                className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-j204z7-MuiFormControlLabel-root"
+              >
+                <span
+                  className="MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
+                  onBlur={[Function]}
+                  onContextMenu={[Function]}
+                  onDragLeave={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  tabIndex={null}
+                >
+                  <input
+                    aria-label="controlled"
+                    checked={false}
+                    className="PrivateSwitchBase-input css-1m9pwf3"
+                    data-indeterminate={false}
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  <svg
+                    aria-hidden={true}
+                    className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                    data-testid="CheckBoxOutlineBlankIcon"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                    />
+                  </svg>
+                  <span
+                    className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                  />
+                </span>
+                <span
+                  className="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-ahj2mt-MuiTypography-root"
+                >
+                  Gender identity
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

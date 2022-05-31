@@ -1,6 +1,6 @@
 import configureStore from 'redux-mock-store';
 import { Store, AnyAction } from 'redux';
-import { FilterOptions, ReducerState } from '../src/types/index';
+import { FilterOptions, ReducerState } from '../types/index';
 
 export const filterOptions: FilterOptions = {
   appointmentType: [],
