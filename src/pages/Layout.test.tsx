@@ -1,37 +1,24 @@
 import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
-import configureStore from 'redux-mock-store';
-import { Store, AnyAction } from 'redux';
-import { FilterOptions, ReducerState } from '../types';
+import { Router } from 'react-router';
+import { createBrowserHistory } from 'history';
 import { Layout } from './Layout';
+import { initialState, mockStore } from '../mocks/mockStore';
 
 describe('<Layout />', () => {
-  const filterOptions: FilterOptions = {
-    appointmentType: [],
-    dateRange: {
-      start: null,
-      end: null,
-    },
-    specialisms: [],
-  };
-  const initialState: ReducerState = {
-    therapists: [],
-    filteredTherapists: [],
-    filterOptions,
-    mobileFilter: false,
-  };
-  const mockStore = configureStore();
-  let store: Store<any, AnyAction>;
-  store = mockStore({ one: initialState });
+  const history = createBrowserHistory();
 
   beforeEach(() => {
     jest.clearAllMocks();
   });
-  xit('Should render the layout component successfully', () => {
-    // Struggling to render chldren in test
+
+  it('Should render the layout component successfully', () => {
+    const store = mockStore(initialState);
     const view = renderer.create(
       <Provider store={store}>
-        <Layout>Hi</Layout>
+        <Router navigator={history} location={'/'}>
+          <Layout>Hi</Layout>
+        </Router>
       </Provider>
     );
     // eslint-disable-next-line testing-library/await-async-query
