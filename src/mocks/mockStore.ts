@@ -15,6 +15,7 @@ export const initialState: ReducerState = {
   filteredTherapists: [],
   filterOptions,
   mobileFilter: false,
+  error: null,
 };
 
 export const mockStore = (initialState: ReducerState) => {

@@ -19,6 +19,7 @@ const {
   setFilteredTherapists,
   setMobileFilter,
   clearFilterOptions,
+  setError,
 } = slice.actions;
 
 type TherapistsResponse = {
@@ -31,7 +32,9 @@ export const getTherapists = () => async (dispatch: AppDispatch) => {
     .then((response: TherapistsResponse) => {
       dispatch(setTherapists(response.data as TherapistInfo[]));
     })
-    .catch((error: any) => console.log(error));
+    .catch((error: any) => {
+      return dispatch(setError('Unabled to get therapists, please refresh the app.'));
+    });
 };
 
 export const updateFilterOptions =
@@ -52,7 +55,7 @@ export const getAvailabilities = async () => {
       return (data = response.data);
     })
     .catch((error: any) => {
-      console.log(error);
+      return {};
     });
   return data;
 };
@@ -104,5 +107,11 @@ export const bookingRequest =
         dispatch(clearFilterOptions());
         return navigate('/Success');
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        return dispatch(setError('Failure to submit request, please try again later'));
+      });
   };
+
+export const clearError = () => async (dispatch: AppDispatch) => {
+  return dispatch(setError(null));
+};

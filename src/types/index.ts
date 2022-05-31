@@ -3,6 +3,7 @@ export interface ReducerState {
   filteredTherapists: TherapistInfo[];
   filterOptions: FilterOptions;
   mobileFilter: boolean;
+  error: string | null;
 }
 
 export interface TherapistInfo {

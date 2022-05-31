@@ -21,6 +21,7 @@ import {
   filterTherapists,
   changeMobileFilter,
   bookingRequest,
+  clearError,
 } from './actions';
 
 jest.mock('axios');
@@ -61,7 +62,7 @@ describe('Actions', () => {
     });
   });
 
-  xit('should return an error as expected and dispatch action', async () => {
+  it('should return an error as expected and dispatch action', async () => {
     mockedAxios.get.mockRejectedValue({
       error: 'test error',
       status: 500,
@@ -69,7 +70,10 @@ describe('Actions', () => {
 
     await store.dispatch<AppDispatch | any>(getTherapists()).then(() => {
       const storeActions = store.getActions();
-      console.log(storeActions);
+      expect(storeActions[1]).toEqual({
+        payload: 'Unabled to get therapists, please refresh the app.',
+        type: 'Therapists/setError',
+      });
     });
   });
 
@@ -84,7 +88,7 @@ describe('Actions', () => {
     };
     await store.dispatch<AppDispatch | any>(updateFilterOptions(updatedFilterOptions)).then(() => {
       const storeActions = store.getActions();
-      expect(storeActions[1]).toEqual({
+      expect(storeActions[2]).toEqual({
         payload: updatedFilterOptions,
         type: 'Therapists/setFilterOptions',
       });
@@ -174,7 +178,7 @@ describe('Actions', () => {
       )
       .then(() => {
         const storeActions = store.getActions();
-        expect(storeActions[2]).toEqual({
+        expect(storeActions[3]).toEqual({
           payload: [therapistOne],
           type: 'Therapists/setFilteredTherapists',
         });
@@ -196,7 +200,7 @@ describe('Actions', () => {
       )
       .then(() => {
         const storeActions = store.getActions();
-        expect(storeActions[3]).toEqual({
+        expect(storeActions[4]).toEqual({
           payload: [therapistOne, therapistTwo],
           type: 'Therapists/setFilteredTherapists',
         });
@@ -206,7 +210,7 @@ describe('Actions', () => {
   it('should dispatch setMobileFilter action', async () => {
     await store.dispatch<AppDispatch | any>(changeMobileFilter(true));
     const storeActions = store.getActions();
-    expect(storeActions[4]).toEqual({
+    expect(storeActions[5]).toEqual({
       payload: true,
       type: 'Therapists/setMobileFilter',
     });
@@ -233,11 +237,21 @@ describe('Actions', () => {
       .dispatch<AppDispatch | any>(bookingRequest(mockBookingOptions, navigate))
       .then(() => {
         const storeActions = store.getActions();
-        expect(storeActions[5]).toEqual({
+        expect(storeActions[6]).toEqual({
           payload: undefined,
           type: 'Therapists/clearFilterOptions',
         });
         expect(navigate).toHaveBeenCalledWith('/Success');
       });
+  });
+
+  it('should dispatch setError action with null', async () => {
+    await store.dispatch<AppDispatch | any>(clearError()).then(() => {
+      const storeActions = store.getActions();
+      expect(storeActions[7]).toEqual({
+        payload: null,
+        type: 'Therapists/setError',
+      });
+    });
   });
 });

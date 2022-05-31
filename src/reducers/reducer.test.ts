@@ -10,6 +10,7 @@ const {
   setFilteredTherapists,
   setMobileFilter,
   clearFilterOptions,
+  setError,
 } = slice.actions;
 
 describe('Reducers', () => {
@@ -94,5 +95,14 @@ describe('Reducers', () => {
     store.dispatch(setMobileFilter(false));
     const newerState = store.getState().one;
     expect(newerState.mobileFilter).toEqual(false);
+  });
+
+  it('should setError on action', () => {
+    const state = store.getState().one;
+    expect(state.error).toEqual(null);
+
+    store.dispatch(setError('error!'));
+    const newState = store.getState().one;
+    expect(newState.error).toEqual('error!');
   });
 });

@@ -13,6 +13,7 @@ const initialState: ReducerState = {
     specialisms: [],
   },
   mobileFilter: false,
+  error: null,
 };
 
 export const slice = createSlice({
@@ -42,6 +43,9 @@ export const slice = createSlice({
     },
     setMobileFilter: (state, action: PayloadAction<boolean>) => {
       state.mobileFilter = action.payload;
+    },
+    setError: (state, action: PayloadAction<string | null>) => {
+      state.error = action.payload;
     },
   },
 });
