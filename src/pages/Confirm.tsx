@@ -66,7 +66,7 @@ export const ConfirmPage = () => {
             Medium:
           </Typography>
           <Typography variant='h5' fontFamily={'lato, sans-serif'} sx={{ padding: '1em' }}>
-            {bookingOptions.apppointmentMedium}
+            {bookingOptions.appointmentMedium}
           </Typography>
         </Grid>
       </Grid>

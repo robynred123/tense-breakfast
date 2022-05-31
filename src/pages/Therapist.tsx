@@ -47,7 +47,7 @@ export const TherapistPage = () => {
     const bookingOptions: BookingOptions = {
       therapistId: therapist.id,
       appointmentType: type,
-      apppointmentMedium: medium,
+      appointmentMedium: medium,
       appointmentDate: time,
     };
     return navigate('/Confirm', {

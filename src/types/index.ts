@@ -43,6 +43,6 @@ export type FilterOptions = {
 export type BookingOptions = {
   therapistId: string;
   appointmentType: AppointmentType | null;
-  apppointmentMedium: AppointmentMedium | null;
+  appointmentMedium: AppointmentMedium | null;
   appointmentDate: string;
 };

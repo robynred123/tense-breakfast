@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ConfirmPage /> Should render the confirm Page successfully with expected data 1`] = `
+<div
+  className="MuiBox-root css-1rq3dmv"
+>
+  <div
+    className="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-md-12 MuiGrid-grid-lg-12 css-1aiqtfq-MuiGrid-root"
+  >
+    <h2
+      className="MuiTypography-root MuiTypography-h2 css-s4howv-MuiTypography-root"
+    >
+      Confirm Appointment
+    </h2>
+    <div
+      className="MuiGrid-root MuiGrid-item css-170b5gt-MuiGrid-root"
+    >
+      <h5
+        className="MuiTypography-root MuiTypography-h5 css-nivqii-MuiTypography-root"
+      >
+        Therapist:
+      </h5>
+      <h5
+        className="MuiTypography-root MuiTypography-h5 css-nivqii-MuiTypography-root"
+      >
+        Albert Einstein
+      </h5>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-item css-170b5gt-MuiGrid-root"
+    >
+      <h5
+        className="MuiTypography-root MuiTypography-h5 css-nivqii-MuiTypography-root"
+      >
+        Date/Time:
+      </h5>
+      <h5
+        className="MuiTypography-root MuiTypography-h5 css-nivqii-MuiTypography-root"
+      >
+        Tuesday, August 17, 2021 8:00 AM
+      </h5>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-item css-170b5gt-MuiGrid-root"
+    >
+      <h5
+        className="MuiTypography-root MuiTypography-h5 css-nivqii-MuiTypography-root"
+      >
+        Type:
+      </h5>
+      <h5
+        className="MuiTypography-root MuiTypography-h5 css-nivqii-MuiTypography-root"
+      >
+        one_off
+      </h5>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-item css-170b5gt-MuiGrid-root"
+    >
+      <h5
+        className="MuiTypography-root MuiTypography-h5 css-nivqii-MuiTypography-root"
+      >
+        Medium:
+      </h5>
+      <h5
+        className="MuiTypography-root MuiTypography-h5 css-nivqii-MuiTypography-root"
+      >
+        phone
+      </h5>
+    </div>
+  </div>
+  <div
+    className="MuiGrid-root MuiGrid-container css-gqqfs-MuiGrid-root"
+  >
+    <button
+      className="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root  css-1d16rzo-MuiButtonBase-root-MuiButton-root"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onContextMenu={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      Cancel
+    </button>
+    <button
+      className="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root  css-ndj2fk-MuiButtonBase-root-MuiButton-root"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onContextMenu={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      OK
+    </button>
+  </div>
+</div>
+`;

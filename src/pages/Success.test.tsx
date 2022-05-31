@@ -8,13 +8,6 @@ import { Router } from 'react-router';
 import { createBrowserHistory } from 'history';
 
 describe('<SuccessPage />', () => {
-  let mockUseLocationValue = {
-    pathname: '/Success',
-    search: '',
-    hash: '',
-    state: null,
-  };
-
   const history = createBrowserHistory();
 
   beforeEach(() => {
