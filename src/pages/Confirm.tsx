@@ -77,7 +77,7 @@ export const ConfirmPage = () => {
         <ButtonComponent
           onClick={() => navigate(-1)}
           text='Cancel'
-          buttonColour={'grey'}
+          buttonColour={'blue'}
           disabled={false}
           width={'25%'}
         />

@@ -1,10 +1,10 @@
 import { Button } from '@mui/material';
-import { DARK_GREY, LIGHT_BLUE, TEAL, WHITE } from '../constants/colours';
+import { DARK_GREY, LIGHT_BLUE, TEAL, WHITE, BLUE } from '../constants/colours';
 
 export type ButtonProps = {
   text: string;
   onClick: () => void;
-  buttonColour: 'green' | 'grey' | 'gradient';
+  buttonColour: 'green' | 'grey' | 'gradient' | 'blue';
   disabled: boolean;
   width: string;
 };
@@ -30,6 +30,14 @@ const setStyle = (buttonColour: string, sharedStyling: {}) => {
         fontWeight: 'bold',
         paddng: '1em',
         backgroundImage: `linear-gradient(140deg, ${TEAL}, ${LIGHT_BLUE})`,
+      };
+    case 'blue':
+      return {
+        ...sharedStyling,
+        color: TEAL,
+        fontWeight: 'bold',
+        padding: '1em',
+        backgroundColor: BLUE,
       };
     default:
       return {

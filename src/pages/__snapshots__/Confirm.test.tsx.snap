@@ -73,7 +73,7 @@ exports[`<ConfirmPage /> Should render the confirm Page successfully with expect
     className="MuiGrid-root MuiGrid-container css-gqqfs-MuiGrid-root"
   >
     <button
-      className="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root  css-1d16rzo-MuiButtonBase-root-MuiButton-root"
+      className="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root  css-1mzfrza-MuiButtonBase-root-MuiButton-root"
       disabled={false}
       onBlur={[Function]}
       onClick={[Function]}
