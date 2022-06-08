@@ -22,13 +22,15 @@ const {
   setError,
 } = slice.actions;
 
+const url: string = 'http://localhost:4000';
+
 type TherapistsResponse = {
   data: TherapistInfo[];
 };
 
 export const getTherapists = () => async (dispatch: AppDispatch) => {
   await axios
-    .get('http://localhost:4000/therapists')
+    .get(`${url}/therapists`)
     .then((response: TherapistsResponse) => {
       dispatch(setTherapists(response.data as TherapistInfo[]));
     })
@@ -50,7 +52,7 @@ export const updateFilterOptions =
 export const getAvailabilities = async () => {
   let data: Availabilities = {};
   await axios
-    .get('http://localhost:4000/availabilities')
+    .get(`${url}/availabilities`)
     .then(async (response: any) => {
       return (data = response.data);
     })
@@ -102,7 +104,7 @@ export const changeMobileFilter = (value: boolean) => (dispatch: AppDispatch) =>
 export const bookingRequest =
   (bookingOptions: BookingOptions, navigate: NavigateFunction) => async (dispatch: AppDispatch) => {
     await axios
-      .post('http://localhost:4000/bookingRequests', bookingOptions)
+      .post(`${url}/bookingRequests`, bookingOptions)
       .then((response) => {
         dispatch(clearFilterOptions());
         return navigate('/Success');
