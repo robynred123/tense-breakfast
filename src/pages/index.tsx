@@ -9,7 +9,7 @@ import { TherapistCard } from '../components/TherapistCard';
 import { useAppDispatch, useAppSelector } from '../store';
 import { FilterMenu } from '../components/FilterMenu';
 import { Specialisms } from '../types';
-import { extractSpecialisms } from '../utils/mapper';
+import { extractSpecialisms } from '../utils/extractor';
 
 export const Index = () => {
   const { therapists, filteredTherapists, filterOptions, mobileFilter } = useAppSelector(

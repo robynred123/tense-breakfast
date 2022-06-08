@@ -1,5 +1,5 @@
 import { Specialisms, TherapistInfo } from '../types';
-import { extractSpecialisms } from './mapper';
+import { extractSpecialisms } from './extractor';
 
 const therapistOne: TherapistInfo = {
   id: '063eb398-45f7-4a9c-a5d3-e95d14c05c44',
