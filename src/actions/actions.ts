@@ -41,12 +41,7 @@ export const getTherapists = () => async (dispatch: AppDispatch) => {
 
 export const updateFilterOptions =
   (filterOptions: FilterOptions) => async (dispatch: AppDispatch) => {
-    const mappedFilterOptions: FilterOptions = {
-      appointmentType: filterOptions.appointmentType,
-      dateRange: filterOptions.dateRange,
-      specialisms: filterOptions.specialisms,
-    };
-    return dispatch(setFilterOptions(mappedFilterOptions));
+    return dispatch(setFilterOptions(filterOptions));
   };
 
 export const getAvailabilities = async () => {

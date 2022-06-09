@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import {
   Box,
   Checkbox,
@@ -13,10 +13,10 @@ import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 
 import { useAppDispatch } from '../store';
 import { DARK_GREY, GREY } from '../constants/colours';
-import { AppointmentType, FilterOptions, Specialisms, DateRange, Type } from '../types';
+import { AppointmentType, FilterOptions, Specialisms } from '../types';
 import { ButtonComponent } from './Button';
 import { updateFilterOptions } from '../actions/actions';
-import { determineSelectedType, handleFilters } from '../utils/filterOptions';
+import { determineSelectedType } from '../utils/filterOptions';
 
 interface MenuProps {
   filterOptions: FilterOptions;
@@ -26,31 +26,49 @@ interface MenuProps {
 export const FilterMenu = (props: MenuProps) => {
   const { filterOptions, therapistSpecialisms } = props;
   const { appointmentType, dateRange, specialisms } = filterOptions;
-  const [startDate, setStartDate] = useState<Date | null>(null);
-  const [endDate, setEndDate] = useState<Date | null>(null);
+  const [startDate, setStartDate] = useState<string | null>(null);
+  const [endDate, setEndDate] = useState<string | null>(null);
+  const [types, setTypes] = useState<AppointmentType[]>([]);
+  const [specialismsOption, setSpecialismsOption] = useState<Specialisms[]>([]);
   const dispatch = useAppDispatch();
 
-  const handleFilterChanges = (value: AppointmentType | Specialisms | DateRange, type: Type) => {
-    return dispatch(
-      updateFilterOptions(handleFilters(value, type, appointmentType, dateRange, specialisms))
-    );
+  useEffect(() => {
+    setStartDate(dateRange.start);
+    setEndDate(dateRange.end);
+    setTypes(appointmentType);
+    setSpecialismsOption(specialisms);
+  }, [appointmentType, dateRange.end, dateRange.start, specialisms]);
+
+  const handleSubmit = () => {
+    const newOptions: FilterOptions = {
+      appointmentType: types,
+      dateRange: {
+        start: startDate || null,
+        end: endDate || null,
+      },
+      specialisms: specialismsOption,
+    };
+    return dispatch(updateFilterOptions(newOptions));
   };
 
-  // only filter when both dates have been selected - reducers number of reloads
-  useEffect(() => {
-    if (startDate && endDate) {
-      const dateRange = {
-        start: startDate.toDateString(),
-        end: endDate.toDateString(),
-      };
-      handleFilterChanges(dateRange, 'date');
+  const handleTypes = (type: AppointmentType) => {
+    if (types.includes(type)) {
+      return setTypes(types.filter((t) => t !== type));
+    } else {
+      return setTypes([...types, type]);
     }
-    // disabled to prevent needing to wrap handleFilterChanges in a useCallBack hook
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [startDate, endDate]);
+  };
+
+  const handleSpecialisms = (specialism: Specialisms) => {
+    if (specialismsOption.includes(specialism)) {
+      return setSpecialismsOption(specialismsOption.filter((s) => s !== specialism));
+    } else {
+      return setSpecialismsOption([...specialismsOption, specialism]);
+    }
+  };
 
   const determineChecked = (specialism: Specialisms) => {
-    if (specialisms.includes(specialism)) {
+    if (specialismsOption.includes(specialism)) {
       return true;
     }
     return false;
@@ -118,16 +136,16 @@ export const FilterMenu = (props: MenuProps) => {
           </Grid>
           <Grid container sx={{ width: '100%', justifyContent: 'space-evenly' }}>
             <ButtonComponent
-              onClick={() => handleFilterChanges('one_off', 'type')}
+              onClick={() => handleTypes('one_off')}
               text='One Off'
-              buttonColour={determineSelectedType('one_off', appointmentType)}
+              buttonColour={determineSelectedType('one_off', types)}
               disabled={false}
               width={'40%'}
             />
             <ButtonComponent
-              onClick={() => handleFilterChanges('consultation', 'type')}
+              onClick={() => handleTypes('consultation')}
               text='Consultation'
-              buttonColour={determineSelectedType('consultation', appointmentType)}
+              buttonColour={determineSelectedType('consultation', types)}
               disabled={false}
               width={'40%'}
             />
@@ -148,7 +166,7 @@ export const FilterMenu = (props: MenuProps) => {
                     control={
                       <Checkbox
                         checked={determineChecked(specialism)}
-                        onChange={() => handleFilterChanges(specialism, 'specialism')}
+                        onChange={() => handleSpecialisms(specialism)}
                         inputProps={{ 'aria-label': 'controlled' }}
                       />
                     }
@@ -156,6 +174,17 @@ export const FilterMenu = (props: MenuProps) => {
                   />
                 ))}
             </FormGroup>
+          </Grid>
+        </Grid>
+        <Grid container>
+          <Grid item>
+            <ButtonComponent
+              onClick={() => handleSubmit()}
+              text='Submit'
+              buttonColour={'blue'}
+              disabled={false}
+              width={'40%'}
+            />
           </Grid>
         </Grid>
       </Grid>
